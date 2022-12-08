@@ -3,12 +3,12 @@ require("koneksi.php");
 
 session_start();
 
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['id_user'])) {
     $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
     header('Location: login.php');
 }
-$sesID = $_SESSION['id'];
-$sesName = $_SESSION['name'];
+$sesID = $_SESSION['id_user'];
+$sesName = $_SESSION['username'];
 $sesLvl = $_SESSION['level'];
 ?>
 
@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

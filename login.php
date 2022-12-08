@@ -32,12 +32,12 @@ if(isset($_POST['submit'])){
             }else{
                 $error = 'user atau password salah!!';
                 echo "<script>alert('$error')</script>";
-                header('Location: log.php');
+                header('Location: login.php');
             }
         }else{
             $error = 'user tidak ditemukan!!';
             echo "<script>alert('$error')</script>";
-            header('Location: log.php');
+            header('Location: login.php');
         }
     }else{
         $error = 'Data tidak boleh kosong!!';
