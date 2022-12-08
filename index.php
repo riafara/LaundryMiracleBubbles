@@ -7,9 +7,9 @@ if (!isset($_SESSION['id_user'])) {
     $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
     header('Location: login.php');
 }
-$sesID = $_SESSION['id_user'];
-$sesName = $_SESSION['username'];
-$sesLvl = $_SESSION['level'];
+$sesid = $_SESSION['id_user'];
+$sesusername = $_SESSION['username'];
+$seslevel = $_SESSION['level'];
 ?>
 
 <!DOCTYPE html>
