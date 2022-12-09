@@ -25,9 +25,9 @@ if(isset($_POST['submit'])){
 
         if($num !=0) {
             if($passVal==$pass && $userVal==$email){
-                $_SESSION['id_user'] = $sesid;
-                $_SESSION['username'] = $sesusername;
-                $_SESSION['level'] = $seslevel;
+                $_SESSION['id_user'] = $id;
+                $_SESSION['username'] = $userName;
+                $_SESSION['level'] = $level;
                 header('Location: index.php');
             }else{
                 $error = 'user atau password salah!!';
