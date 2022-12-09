@@ -328,18 +328,16 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
+                                            <th>Id</th>
                                             <th>Email</th>
-                                            <th>No Hp</th>
-                                            <th>Alamat</th>
+                                            <th>Nama</th>
+                                            <th>Level</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM tb_user";
+                                            $query = "SELECT * FROM user_detail";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
@@ -348,21 +346,17 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $nama = $row['nama'];
-                                                $username = $row['username'];
-                                                $passVal = $row['password'];
-                                                $userVal = $row['email'];
-                                                $hp = $row['no_hp'];
-                                                $alm = $row['alamat'];
+                                                $userId = $row['id'];
+                                                $userMail = $row['user_email'];
+                                                $userName = $row['user_fullname'];
+                                                $userLevel = $row['level'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $nama; ?></td>
-                                            <td><?php echo $username; ?></td>
-                                            <td><?php echo $passVal; ?></td>
-                                            <td><?php echo $userVal; ?></td>
-                                            <td><?php echo $hp; ?></td>
-                                            <td><?php echo $alm; ?></td>
+                                            <td><?php echo $userId; ?></td>
+                                            <td><?php echo $userMail; ?></td>
+                                            <td><?php echo $userName; ?></td>
+                                            <td><?php echo $userLevel; ?></td>
                                             <td>
                                             <a href="edit.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 

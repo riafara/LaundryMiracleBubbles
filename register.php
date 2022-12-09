@@ -1,14 +1,11 @@
 <?php
 require('koneksi.php');
 if( isset($_POST['register']) ){
-    $nama    = $_POST['txt_nama'];
-    $userName = $_POST['txt_unama'];
-    $password = $_POST['txt_pass'];
-    $email    = $_POST['txt_email'];
-    $hp = $_POST['txt_nohp'];
-    $alm = $_POST['txt_al'];
+    $userMail = $_POST['txt_email'];
+    $userPass = $_POST['txt_pass'];
+    $userName = $_POST['txt_nama'];
 
-    $query = "INSERT INTO tb_user (nama, username, password, email, no_hp, alamat, level) VALUES ('$nama','$userName','$password','$email','$hp','$alm',2)";
+    $query = "INSERT INTO user_detail (user_email, user_password, user_fullname, level) VALUES ('$userMail','$userPass','$userName',2)";
     $result = mysqli_query($koneksi, $query);
     header('Location: login.php');
 }
@@ -55,27 +52,15 @@ if( isset($_POST['register']) ){
                             <form class="user" action="register.php" method="POST">
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputUsername"
-                                        placeholder="Nama" name="txt_nama">
+                                        placeholder="Username" name="txt_nama">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Username" name="txt_unama">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Email Address" name="txt_email">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user" id="exampleInputPassword"
                                         placeholder="Password" name="txt_pass">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputPassword"
-                                        placeholder="Email" name="txt_email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword"
-                                        placeholder="No HP" name="txt_nohp">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword"
-                                        placeholder="Alamat" name="txt_al">
                                 </div>
                                 <button type="submit" name="register" class="btn btn-primary btn-user btn-block">Register</button>
                             </form>

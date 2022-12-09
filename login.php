@@ -1,32 +1,30 @@
-<?php
-require ('koneksi.php');
+<?php  
+require('koneksi.php');
 
 session_start();
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $email = $_POST['txt_email'];
     $pass = $_POST['txt_pass'];
+    
+    if (!empty(trim($email)) && !empty(trim($pass))) {
+        $query      = "SELECT * FROM user_detail WHERE user_email = '$email'";
+        $result     = mysqli_query($koneksi, $query);
+        $num        = mysqli_num_rows($result);
 
-    if(!empty(trim($email))&& !empty(trim($pass))){
-        $query = "SELECT * FROM tb_user WHERE email='$email";
-        $result = mysqli_query($koneksi, $query);
-        $num = mysqli_num_rows($result);
-
-        while ($row = mysqli_fetch_array($result)){
-            $id = $row['id_user'];
-            $nama = $row['nama'];
-            $userName = $row['username'];
-            $passVal = $row['password'];
-            $userVal = $row['email'];
-            $nohp = $row['no_hp'];
-            $alamat = $row['alamat'];
+        while ($row = mysqli_fetch_array($result)) {
+            $id = $row['id'];
+            $userVal = $row['user_email'];
+            $passVal = $row['user_password'];
+            $userName = $row['user_fullname'];
             $level = $row['level'];
+
         }
 
-        if($num !=0) {
-            if($passVal==$pass && $userVal==$email){
-                $_SESSION['id_user'] = $id;
-                $_SESSION['username'] = $userName;
+        if ($num != 0) {
+            if ($userVal==$email && $passVal==$pass) {
+                $_SESSION['id'] = $id;
+                $_SESSION['name'] = $userName;
                 $_SESSION['level'] = $level;
                 header('Location: index.php');
             }else{
@@ -45,6 +43,7 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +55,7 @@ if(isset($_POST['submit'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title>SB Admin 2 - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -67,6 +66,7 @@ if(isset($_POST['submit'])){
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    
     <script>
         $(document).ready(function(){       
             $('.form-checkbox').click(function(){
@@ -90,7 +90,7 @@ if(isset($_POST['submit'])){
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg" style="margin-top: 125px;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -100,27 +100,25 @@ if(isset($_POST['submit'])){
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="login.php" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter Email Address..." name="txt_email">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="password" placeholder="Password" name="txt_pass">
                                         </div>
-                                       
-                                        <a href="index.php" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
-                                        <hr>
-                                        
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="show_password" name="show_password">
+                                                <label class="custom-control-label" for="show_password">Show Password</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Login</button>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
                                     <div class="text-center">
                                         <a class="small" href="register.php">Create an Account!</a>
                                     </div>
@@ -146,6 +144,31 @@ if(isset($_POST['submit'])){
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function(){  
+            $('#show_password').on('click', function(){  
+                var passwordField = $('#password');  
+                var passwordFieldType = passwordField.attr('type');
+                if(passwordField.val() != '')
+                {
+                    if(passwordFieldType == 'password')  
+                    {  
+                        passwordField.attr('type', 'text');  
+                        $(this).text('Hide Password');  
+                    }  
+                    else  
+                    {  
+                        passwordField.attr('type', 'password');  
+                        $(this).text('Show Password');  
+                    }
+                }
+                else
+                {
+                    alert("Please Enter Password");
+                }
+            });  
+        }); 
+    </script>
 </body>
 
 </html>

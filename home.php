@@ -30,16 +30,12 @@ $sesLvl = $_SESSION['level'];
         <table border='1' style="text-align:center">
             <tr>
                 <td>No</td>
-                <td>Nama</td>
-                <td>Username</td>
-                <td>Password</td>
                 <td>Email</td>
-                <td>No Hp</td>
-                <td>Alamat</td>
+                <td>Nama</td>
                 <td colspan="2"></td>
             </tr>
             <?php
-            $query  = "SELECT * FROM tb_user";
+            $query  = "SELECT * FROM user_detail";
             $result = mysqli_query($koneksi, $query);
             $no     = 1;
 
@@ -50,21 +46,13 @@ $sesLvl = $_SESSION['level'];
                 $dis = "disabled";
             }
             while ($row = mysqli_fetch_array($result)){
-                $nama = $row['nama'];
-                $username = $row['username'];
-                $passVal = $row['password'];
-                $userVal = $row['email'];
-                $hp = $row['no_hp'];
-                $alm = $row['alamat'];
+                $userMail  = $row['user_email'];
+                $userName   = $row['user_fullname'];
             ?>
             <tr>
                 <td><?php echo $no; ?></td>
-                <td><?php echo $nama; ?></td>
-                <td><?php echo $username; ?></td>
-                <td><?php echo $passVal; ?></td>
-                <td><?php echo $userVal; ?></td>
-                <td><?php echo $hp; ?></td>
-                <td><?php echo $alm; ?></td>
+                <td><?php echo $userMail; ?></td>
+                <td><?php echo $userName; ?></td>
                 <td>
                     <a href="edit.php?id=<?php echo $row['id']; ?>">
                     <input type="button" value="edit" <?php echo $dis; ?>></a>
