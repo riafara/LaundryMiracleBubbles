@@ -42,9 +42,8 @@ require ("koneksi.php");
                 <td><?php echo $des; ?></td>
                 <td>
                     <a href='editpaket.php?id_paket=$row[id_paket]'>Edit</a>
-                    <a href='hapus.php?id_user =$row[id_user]'>Hapus</a>
+                    <a href='hapuspaket.php?id_paket =$row[id_paket]'>Hapus</a>
                 </td>
-                
             </tr>        
             <?php
             $no++;   
