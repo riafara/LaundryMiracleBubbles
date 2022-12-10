@@ -1,12 +1,12 @@
 <?php
 require ('koneksi.php');
 if( isset($_POST['update']) ){
-    $pkt   = $_POST['txt_id'];
+    $id    = $_POST['txt_id'];
     $paket = $_POST['txt_paket'];
     $harga = $_POST['txt_harga'];
     $des   = $_POST['txt_deskripsi'];
 
-    $query = "UPDATE tb_paket SET paket='$paket', harga_kilo='$harga', deskripsi='$des' WHERE id_paket='$pkt'";
+    $query = "UPDATE tb_paket SET paket='$paket', harga_kilo='$harga', deskripsi='$des' WHERE id_paket='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: paket.php');
@@ -16,7 +16,7 @@ $query = "SELECT * FROM tb_paket WHERE id_paket='$id'";
 $result = mysqli_query($koneksi, $query)or die(mysqli_errno($koneksi));
 
 while ($row = mysqli_fetch_array($result)) {
-    $pkt   = $row['id_paket'];
+    $id    = $row['id_paket'];
 	$paket = $row['paket'];
 	$harga = $row['harga_kilo'];
     $des   = $row['deskripsi'];
