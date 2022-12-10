@@ -14,6 +14,7 @@ require ("koneksi.php");
         <table border='2' style="text-align:center">
             <tr>
                 <td>No</td>
+                <td>ID</td>
                 <td>Tanggal</td>
                 <td>Customer</td>
                 <td>Nama Paket</td>
@@ -31,18 +32,20 @@ require ("koneksi.php");
             
 
             while ($row = mysqli_fetch_array($result)){
-                $tgl = $row['tanggal'];
-                $cus = $row['id_customer'];
-                $paket = $row['id_paket'];
-                $qty = $row['qty'];
-                $harga = $row['biaya'];
-                $bayar = $row['bayar'];
+                $tgl     = $row['tanggal'];
+                $id      = $row['id_transaksi']
+                $cus     = $row['id_customer'];
+                $paket   = $row['id_paket'];
+                $qty     = $row['qty'];
+                $harga   = $row['biaya'];
+                $bayar   = $row['bayar'];
                 $kembali = $row['kembalian'];
                 
             ?>
             <tr>
                 <td><?php echo $no; ?></td>
                 <td><?php echo $tgl; ?></td>
+                <td><?php echo $id; ?></td>
                 <td><?php echo $cus; ?></td>
                 <td><?php echo $paket; ?></td>
                 <td><?php echo $qty; ?></td>
@@ -50,7 +53,7 @@ require ("koneksi.php");
                 <td><?php echo $bayar; ?></td>
                 <td><?php echo $kembali; ?></td>
                 <td>
-                    <a href='edit.php?id_user=$row[id_user]'>Edit</a>
+                    <a href='edittransaksi.php?id_user=$row[id_transaksi]'>Edit</a>
                     <a href='hapustransaksi.php?id_transaksi =$row[id_transaksi]'>Hapus</a>
                 </td>
                 
