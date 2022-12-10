@@ -34,7 +34,7 @@ require ("koneksi.php");
             while ($row = mysqli_fetch_array($result)){
                 $tgl     = $row['tanggal'];
                 $id      = $row['id_transaksi']
-                $cus     = $row['id_customer'];
+                $cust    = $row['id_customer'];
                 $paket   = $row['id_paket'];
                 $qty     = $row['qty'];
                 $harga   = $row['biaya'];
