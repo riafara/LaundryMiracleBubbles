@@ -8,11 +8,6 @@ if (!isset($_SESSION['id'])) {
     header('Location: paket.php');
 }
 
-$sesid    = $_SESSION['id'];
-$sespaket = $_SESSION['paket'];
-$sesharga = $_SESSION['harga'];
-$sesdes   = $_SESSION['des'];
-
 if( isset($_POST['update']) ){
     $id   = $_POST['txt_id'];
     $paket = $_POST['txt_paket'];
