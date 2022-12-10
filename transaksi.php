@@ -46,7 +46,7 @@ require ("koneksi.php");
                 <td><?php echo $no; ?></td>
                 <td><?php echo $tgl; ?></td>
                 <td><?php echo $id; ?></td>
-                <td><?php echo $cus; ?></td>
+                <td><?php echo $cust; ?></td>
                 <td><?php echo $paket; ?></td>
                 <td><?php echo $qty; ?></td>
                 <td><?php echo $harga; ?></td>
