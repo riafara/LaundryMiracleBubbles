@@ -14,7 +14,6 @@ require ("koneksi.php");
         <table border='2' style="text-align:center">
             <tr>
                 <td>No</td>
-                <td>ID Transaksi</td>
                 <td>Tanggal</td>
                 <td>Customer</td>
                 <td>Nama Paket</td>
@@ -32,7 +31,6 @@ require ("koneksi.php");
             
 
             while ($row = mysqli_fetch_array($result)){
-                $id = $row['id_transaksi'];
                 $tgl = $row['tanggal'];
                 $cus = $row['id_customer'];
                 $paket = $row['id_paket'];
@@ -44,7 +42,6 @@ require ("koneksi.php");
             ?>
             <tr>
                 <td><?php echo $no; ?></td>
-                <td><?php echo $id; ?></td>
                 <td><?php echo $tgl; ?></td>
                 <td><?php echo $cus; ?></td>
                 <td><?php echo $paket; ?></td>
@@ -62,6 +59,6 @@ require ("koneksi.php");
             $no++;   
             }?>
         </table>  
-        <a href="home.php">Log Out</a>
+        <a href="login.php">Log Out</a>
     </body>
 </html>
