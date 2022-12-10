@@ -49,7 +49,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3"> MIRACLE BUBBLES </div>
             </a>
 
             <!-- Divider -->
@@ -61,13 +61,18 @@ $sesLvl = $_SESSION['level'];
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="tables.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>User</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                TABEL DATA 
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -81,8 +86,13 @@ $sesLvl = $_SESSION['level'];
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">MASTER</h6>
                         <a class="collapse-item" href="tables.php">User</a>
+                        <a class="collapse-item" href="tables.php">Customer</a>
+                        <a class="collapse-item" href="tables.php">Paket</a>
+                        <a class="collapse-item" href="tables.php">Transaksi</a>
+                        <a class="collapse-item" href="tables.php">Detail Transaksi</a>
                     </div>
                 </div>
+               
             </li>
 
             <!-- Divider -->
@@ -644,7 +654,7 @@ $sesLvl = $_SESSION['level'];
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Mircale Bubbles 2022</span>
                     </div>
                 </div>
             </footer>
