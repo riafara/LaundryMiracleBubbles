@@ -8,10 +8,10 @@ if (!isset($_SESSION['id'])) {
     header('Location: paket.php');
 }
 
-$id = $_SESSION['id_paket'];
-$paket = $_SESSION['paket'];
-$harga = $_SESSION['harga_kilo'];
-$des = $_SESSION['deskripsi'];
+$sesid    = $_SESSION['id'];
+$sespaket = $_SESSION['paket'];
+$sesharga = $_SESSION['harga'];
+$sesdes   = $_SESSION['deskripsi'];
 
 if( isset($_POST['update']) ){
     $id   = $_POST['txt_id'];
@@ -29,10 +29,10 @@ $query = "SELECT * FROM tb_paket WHERE id_paket='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
-    $id = $row['id_paket'];
+    $id    = $row['id_paket'];
     $paket = $row['paket'];
     $harga = $row['harga_kilo'];
-    $des = $row['deskripsi'];
+    $des   = $row['deskripsi'];
 
 ?>
 <!DOCTYPE html>
