@@ -49,6 +49,6 @@ require ("koneksi.php");
             $no++;   
             }?>
         </table>  
-        <a href="home.php">Log Out</a>
+        <p><a href="logout.php">Log Out</a></p>
     </body>
 </html>
