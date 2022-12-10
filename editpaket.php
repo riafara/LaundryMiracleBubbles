@@ -8,7 +8,7 @@ if( isset($_POST['update']) ){
     $query = "UPDATE tb_paket SET paket='$paket', harga_kilo='$harga', deskripsi='$deskripsi' WHERE id_paket='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
-    header('Location: home.php');
+    header('Location: paket.php');
 }
 $id = $_GET['id_paket'];  
 $query = "SELECT * FROM tb_paket WHERE id_paket='$id'";
