@@ -11,7 +11,7 @@ if (!isset($_SESSION['id'])) {
 $sesid    = $_SESSION['id'];
 $sespaket = $_SESSION['paket'];
 $sesharga = $_SESSION['harga'];
-$sesdes   = $_SESSION['deskripsi'];
+$sesdes   = $_SESSION['des'];
 
 if( isset($_POST['update']) ){
     $id   = $_POST['txt_id'];
