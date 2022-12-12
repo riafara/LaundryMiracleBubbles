@@ -1,5 +1,17 @@
 <?php
 require ('koneksi.php');
+
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
+    header('Location: login.php');
+}
+
+$sesID = $_SESSION['id'];
+$sesName = $_SESSION['name'];
+$sesLvl = $_SESSION['level'];
+
 if( isset($_POST['update']) ){
     $pkt = $_POST['txt_id'];
     $paket = $_POST['txt_paket'];
