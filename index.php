@@ -109,7 +109,25 @@ $sesLvl = $_SESSION['level'];
                 <a class="nav-link" href="tcustomer.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Customer</span></a>
-            </li>            
+            </li>  
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tpaket.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Paket</span></a>
+            </li> 
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="ttransaksi.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Transaksi</span></a>
+            </li>  
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tdttransaksi.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Detail Transaksi</span></a>
+            </li>             
             <!-- Divider -->
             <hr class="sidebar-divider">
 
