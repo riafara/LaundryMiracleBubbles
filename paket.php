@@ -40,8 +40,8 @@ require ("koneksi.php");
                 <td><?php echo $des; ?></td>
                 
                 <td>
-                <a href="editpaket.php?id_customer=<?php echo $row['id_paket']; ?>">edit</a>
-                <a href="hapuspaket.php?id_customer=<?php echo $row['id_paket']; ?>">hapus</a>
+                <a href="editpaket.php?id_paket=<?php echo $row['id_paket']; ?>">edit</a>
+                <a href="hapuspaket.php?id_paket=<?php echo $row['id_paket']; ?>">hapus</a>
 
             </td>
                 
