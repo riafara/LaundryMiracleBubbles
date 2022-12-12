@@ -389,7 +389,7 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id_detail_transaksi'];
+                                                $userId = $row['id_detail'];
                                                 $idt = $row['id_transaksi'];
                                                 $idp = $row['id_paket'];
                                                 $qty = $row['qty'];
@@ -405,10 +405,10 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $biaya; ?></td>
                                             <td><?php echo $keterangan; ?></td>
                                             <td>
-                                            <a href="editdt.php?id_detail_transaksi= <?php echo $row['id_detail_transaksi']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="editdt.php?id_detail= <?php echo $row['id_detail']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('hapusdt.php?&id_detail_transaksi=<?php echo $row['id_detail_transaksi']; ?>');">
+                                            onClick="confirmModal('hapusdt.php?&id_detail=<?php echo $row['id_detail']; ?>');">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>
