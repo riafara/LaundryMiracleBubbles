@@ -5,7 +5,7 @@ session_start();
 
 if (!isset($_SESSION['id'])) {
     $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
-    header('Location: login.php');
+    header('Location: tdttransaksi.php');
 }
 $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
