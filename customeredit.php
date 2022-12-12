@@ -30,9 +30,9 @@ while ($row = mysqli_fetch_array($result)) {
 <body>
     <form action="customeredit.php" method="POST">
         <p><input type="hidden" name="txt_id" value="<?php echo $id; ?>"></p>
-        <p>nama : <input type="text" name="txt_nama" required></p>
-        <p>alamat : <input type="text" name="txt_alamat" required></p>
-        <p>no hp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="txt_hp" required></p>
+        <p>Nama : <input type="text" name="txt_nama" required></p>
+        <p>Alamat : <input type="text" name="txt_alamat" required></p>
+        <p>No Hp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="txt_hp" required></p>
         <button type="submit" name="update">Update</button>
     </form>
     <p><a href="customer.php">Kembali</p>
