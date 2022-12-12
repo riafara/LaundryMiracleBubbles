@@ -408,7 +408,7 @@ $sesLvl = $_SESSION['level'];
                                             <a href="editdt.php?id_detail= <?php echo $row['id_detail']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('hapusdt.php?&id_detail=<?php echo $row['id_detail']; ?>');">
+                                            onClick="confirmModal('hapusdetailtransaksi.php?&id_detail=<?php echo $row['id_detail']; ?>');">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>
