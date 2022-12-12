@@ -14,6 +14,7 @@ require ("koneksi.php");
         <table border='2' style="text-align:center">
             <tr>
                 <td>No</td>
+                <td>ID Paket</td>
                 <td>Paket</td>
                 <td>Harga/Kg</td>
                 <td>Deskripsi</td>
@@ -28,13 +29,15 @@ require ("koneksi.php");
             
 
             while ($row = mysqli_fetch_array($result)){
+                $pkt   = $row['id_paket'];
                 $paket = $row['paket'];
                 $harga = $row['harga_kilo'];
-                $des = $row['deskripsi'];
+                $des   = $row['deskripsi'];
                 
             ?>
             <tr>
                 <td><?php echo $no; ?></td>
+                <td><?php echo $pkt; ?></td>
                 <td><?php echo $paket; ?></td>
                 <td><?php echo $harga; ?></td>
                 <td><?php echo $des; ?></td>
