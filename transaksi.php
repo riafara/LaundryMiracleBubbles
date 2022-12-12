@@ -5,7 +5,7 @@ require ("koneksi.php");
 
 <html>
 <head>
-        <title>Home</title>
+        <title>Transaksi</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
     <body>
@@ -14,14 +14,15 @@ require ("koneksi.php");
         <table border='2' style="text-align:center">
             <tr>
                 <td>No</td>
-                <td>ID</td>
-                <td>Tanggal</td>
-                <td>Customer</td>
-                <td>Nama Paket</td>
+                <td>ID Transaksi</td>
+                <td>Tanggal Transaksi</td>
+                <td>ID Customer</td>
+                <td>ID Paket</td>
                 <td>Qty</td>
                 <td>Harga</td>
                 <td>Bayar</td>
-                <td>Kembali</td>
+                <td>Kembalian</td>
+                
                 <td colspan="2"></td>
             </tr>
             <?php
@@ -32,30 +33,31 @@ require ("koneksi.php");
             
 
             while ($row = mysqli_fetch_array($result)){
-                $tgl     = $row['tanggal'];
-                $id      = $row['id_transaksi']
-                $cust    = $row['id_customer'];
-                $paket   = $row['id_paket'];
-                $qty     = $row['qty'];
-                $harga   = $row['biaya'];
-                $bayar   = $row['bayar'];
+                $transaksi = $row['id_transaksi'];
+                $tgl = $row['tanggal'];
+                $cust = $row['id_customer'];
+                $pkt = $row['id_paket'];
+                $qty = $row['qty'];
+                $biaya = $row['biaya'];
+                $bayar = $row['bayar'];
                 $kembali = $row['kembalian'];
-                
             ?>
             <tr>
                 <td><?php echo $no; ?></td>
+                <td><?php echo $transaksi; ?></td>
                 <td><?php echo $tgl; ?></td>
-                <td><?php echo $id; ?></td>
                 <td><?php echo $cust; ?></td>
-                <td><?php echo $paket; ?></td>
+                <td><?php echo $pkt; ?></td>
                 <td><?php echo $qty; ?></td>
-                <td><?php echo $harga; ?></td>
+                <td><?php echo $biaya; ?></td>
                 <td><?php echo $bayar; ?></td>
                 <td><?php echo $kembali; ?></td>
+                
                 <td>
-                    <a href='edittransaksi.php?id_user=$row[id_transaksi]'>Edit</a>
-                    <a href='hapustransaksi.php?id_transaksi =$row[id_transaksi]'>Hapus</a>
-                </td>
+                <a href="edittransaksi.php?id_transaksi=<?php echo $row['id_transaksi']; ?>">edit</a>
+                <a href="hapustransaksi.php?id_transaksi=<?php echo $row['id_transaksi']; ?>">hapus</a>
+
+            </td>
                 
             </tr>        
             <?php
