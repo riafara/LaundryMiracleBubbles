@@ -14,6 +14,7 @@ require ("koneksi.php");
         <table border='2' style="text-align:center">
             <tr>
                 <td>No</td>
+                <td>ID Customer</td>
                 <td>Nama</td>
                 <td>Alamat</td>
                 <td>No Hp</td>
@@ -28,13 +29,15 @@ require ("koneksi.php");
             
 
             while ($row = mysqli_fetch_array($result)){
+                $cust   = $row['id_customer'];
                 $nama = $row['nama'];
-                $alamat = $row['alamat'];
-                $hp = $row['no_hp'];
+                $alamat= $row['alamat'];
+                $hp   = $row['no_hp'];
                 
             ?>
             <tr>
                 <td><?php echo $no; ?></td>
+                <td><?php echo $cust; ?></td>
                 <td><?php echo $nama; ?></td>
                 <td><?php echo $alamat; ?></td>
                 <td><?php echo $hp; ?></td>
