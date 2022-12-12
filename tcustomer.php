@@ -106,7 +106,14 @@ $sesLvl = $_SESSION['level'];
                 <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data User</span></a>
-            </li>            
+
+            </li> 
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tcustomer.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Customer</span></a>  
+            </li>         
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -332,12 +339,12 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data User</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Table User</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Table Customer</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -345,40 +352,40 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Id</th>
-                                            <th>Email</th>
+                                            <th>ID Customer</th>
                                             <th>Nama</th>
-                                            <th>Level</th>
+                                            <th>Alamat</th>
+                                            <th>No Hp</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM user_detail";
-                                            $result = mysqli_query($koneksi, $query); 
-                                            $no = 1;      
+                                             $query  = "SELECT * FROM tb_customer";
+                                             $result = mysqli_query($koneksi, $query);
+                                             $no     = 1;   
                                             if ($sesLvl == 1) {
                                                 $dis = "";    
                                             }else{
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id'];
-                                                $userMail = $row['user_email'];
-                                                $userName = $row['user_fullname'];
-                                                $userLevel = $row['level'];
+                                                $userId = $row['id_customer'];
+                                                $nama = $row['nama'];
+                                                $alamat = $row['alamat'];
+                                                $hp = $row['no_hp'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
                                             <td><?php echo $userId; ?></td>
-                                            <td><?php echo $userMail; ?></td>
-                                            <td><?php echo $userName; ?></td>
-                                            <td><?php echo $userLevel; ?></td>
+                                            <td><?php echo $nama; ?></td>
+                                            <td><?php echo $alamat; ?></td>
+                                            <td><?php echo $hp; ?></td>
                                             <td>
-                                            <a href="edit.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="customeredit.php?id_customer= <?php echo $row['id_customer']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');">
+                                            onClick="confirmModal('customerhapus.php?&id_customer=<?php echo $row['id_customer']; ?>');">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>

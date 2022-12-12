@@ -94,7 +94,22 @@ $sesLvl = $_SESSION['level'];
                 </div>
                
             </li>
-
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                            Tables
+                        </div>
+             <!-- Nav Item - Tables -->
+             <li class="nav-item">
+                <a class="nav-link" href="tables.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data User</span></a>
+            </li>     
+             <!-- Nav Item - Tables -->
+             <li class="nav-item">
+                <a class="nav-link" href="tcustomer.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Customer</span></a>
+            </li>            
             <!-- Divider -->
             <hr class="sidebar-divider">
 
