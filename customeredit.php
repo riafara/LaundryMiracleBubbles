@@ -28,7 +28,7 @@ $query = "SELECT * FROM tb_customer WHERE id_customer='$id'";
 $result = mysqli_query($koneksi, $query)or die(mysqli_errno($koneksi));
 
 while ($row = mysqli_fetch_array($result)) {
-    $cust = $row['id_customer'];
+    $id = $row['id_customer'];
 	$nama = $row['nama'];
 	$alamat = $row['alamat'];
     $hp = $row['no_hp'];
@@ -46,7 +46,7 @@ while ($row = mysqli_fetch_array($result)) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard</title>
+    <title>EDIT CUSTOMER</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -173,7 +173,7 @@ while ($row = mysqli_fetch_array($result)) {
                             </div>
                             <form class="user" action="customeredit.php" method="POST">
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="txt_id" value="<?php echo $cust; ?>">
+                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="txt_id" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Nama</label>
@@ -208,7 +208,7 @@ while ($row = mysqli_fetch_array($result)) {
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Miracle Bubbles 2022</span>
+                        <span>Copyright &copy; Miracle Bubbles 2022</span>
                     </div>
                 </div>
             </footer>
