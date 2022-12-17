@@ -23,24 +23,20 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Data User</title>
+    <title>EDIT PAKET</title>
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
-
+<body class="bg-gradient-primary">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -52,7 +48,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"> MIRACLE BUBBLES </div>
+                <div class="sidebar-brand-text mx-3"></div>
             </a>
 
             <!-- Divider -->
@@ -64,18 +60,13 @@ $sesLvl = $_SESSION['level'];
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="tables.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>User</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                TABEL DATA 
+                Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -89,50 +80,12 @@ $sesLvl = $_SESSION['level'];
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">MASTER</h6>
                         <a class="collapse-item" href="tables.php">User</a>
-                        <a class="collapse-item" href="tables.php">Customer</a>
-                        <a class="collapse-item" href="tables.php">Paket</a>
-                        <a class="collapse-item" href="tables.php">Transaksi</a>
-                        <a class="collapse-item" href="tables.php">Detail Transaksi</a>
                     </div>
                 </div>
-               
             </li>
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                            Tables
-                        </div>
-             <!-- Nav Item - Tables -->
-             <li class="nav-item">
-                <a class="nav-link" href="tables.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data User</span></a>
-            </li>     
-             <!-- Nav Item - Tables -->
-             <li class="nav-item">
-                <a class="nav-link" href="tcustomer.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Customer</span></a>
-            </li>  
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tpaket.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Paket</span></a>
-            </li> 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="ttransaksi.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Transaksi</span></a>
-            </li>  
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tdttransaksi.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Detail Transaksi</span></a>
-            </li>             
+
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -152,9 +105,11 @@ $sesLvl = $_SESSION['level'];
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
@@ -340,7 +295,7 @@ $sesLvl = $_SESSION['level'];
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -351,81 +306,47 @@ $sesLvl = $_SESSION['level'];
 
                 </nav>
                 <!-- End of Topbar -->
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
+            <div class="card-body w-75 vh-50 ">
+                <!-- Nested Row within Card Body -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Table Customer</h6>
+                        <div class="p-2">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Tambah Customer</h1>
+                            </div>
+                            <form class="user" action="insert.php" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername"
+                                        placeholder="Nama" name="txt_nama">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Alamat" name="txt_alamat">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword"
+                                        placeholder="No HP" name="txt_hp">
+                                </div>
+                                <div class="form-group row" style="position: relative; float: right; ">
+                                    <div class="px-3" style="width: 150px;">
+                                        <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">Simpan</button>
+                                    </div>
+                                    <div style="width: 125px;">
+                                        <a href="tcustomer.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                    </div>
+                                </div>
+                            </form>
+                            </form>
                             
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>ID Customer</th>
-                                            <th>Nama</th>
-                                            <th>Alamat</th>
-                                            <th>No Hp</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                             $query  = "SELECT * FROM tb_customer";
-                                             $result = mysqli_query($koneksi, $query);
-                                             $no     = 1;   
-                                            if ($sesLvl == 1) {
-                                                $dis = "";    
-                                            }else{
-                                                $dis = "disabled";
-                                            }        
-                                            while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id_customer'];
-                                                $nama = $row['nama'];
-                                                $alamat = $row['alamat'];
-                                                $hp = $row['no_hp'];
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td><?php echo $userId; ?></td>
-                                            <td><?php echo $nama; ?></td>
-                                            <td><?php echo $alamat; ?></td>
-                                            <td><?php echo $hp; ?></td>
-                                            <td>
-                                            <a href="customeredit.php?id_customer=<?php echo $row['id_customer']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
-
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('customerhapus.php?&id_customer=<?php echo $row['id_customer']; ?>');">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                            $no++;
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
                     </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
+                
+            
+        </div>
+    </div>
+    <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -440,36 +361,6 @@ $sesLvl = $_SESSION['level'];
 
     </div>
     <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!--Delete Modal-->
-    <div class="modal fade" id="modalDelete">
-        <div class="modal-dialog">
-            <div class="modal-content" style="margin-top:100px;">
-                <div class="modal-header">
-                    <h4 class="modal-title" style="text-align:center;">Hapus data ini?</h4>
-                    <button type="button" class="close" data-dismiss="modal" ariahidden="true">&times;</button>
-                </div>
-                <div class="modal-body">Pilih "Hapus" dibawah jika anda yakin ingin menghapus data.</div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
-                    <a class="btn btn-success btn-sm" href="tcustomer.php"  >Cancel</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Javascript untuk popup modal Delete-->
-    <script type="text/javascript">
-    function confirmModal(delete_url){
-        $('#modalDelete').modal('show', {backdrop: 'static'});
-        document.getElementById('delete_link').setAttribute('href' , delete_url);
-    }
-    </script>
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -507,7 +398,6 @@ $sesLvl = $_SESSION['level'];
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-
 </body>
 
 </html>
