@@ -399,7 +399,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $alamat; ?></td>
                                             <td><?php echo $hp; ?></td>
                                             <td>
-                                            <a href="customeredit.php?id_customer= <?php echo $row['id_customer']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="customeredit.php?id_customer=<?php echo $row['id_customer']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
                                             onClick="confirmModal('customerhapus.php?&id_customer=<?php echo $row['id_customer']; ?>');">

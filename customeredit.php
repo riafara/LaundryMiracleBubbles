@@ -46,7 +46,7 @@ while ($row = mysqli_fetch_array($result)){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EDIT USER</title>
+    <title>EDIT CUSTOMER</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
