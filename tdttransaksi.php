@@ -462,8 +462,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="modal-body">Pilih "Hapus" dibawah jika anda yakin ingin menghapus data.</div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
-                    <button type="button" class="btn btn-success btn-sm" datadismiss="modal">Cancel</button>
-                </div>
+                    <a class="btn btn-success btn-sm" href="tdttransaksi.php"  >Cancel</a>
             </div>
         </div>
     </div>
