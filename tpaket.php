@@ -399,7 +399,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $harga; ?></td>
                                             <td><?php echo $des; ?></td>
                                             <td>
-                                            <a href="editpaket.php?id_paket= <?php echo $row['id_paket']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="editpaket.php?id_paket=<?php echo $row['id_paket']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
                                             onClick="confirmModal('hapuspaket.php?&id_paket=<?php echo $row['id_paket']; ?>');">
@@ -456,7 +456,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="modal-body">Pilih "Hapus" dibawah jika anda yakin ingin menghapus data.</div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
-                    <a class="btn btn-success btn-sm" href="tcustomer.php"  >Cancel</a>
+                    <a class="btn btn-success btn-sm" href="tpaket.php"  >Cancel</a>
                 </div>
             </div>
         </div>
