@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Data User</title>
+    <title>TRANSAKSI</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -412,7 +412,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $bayar; ?></td>
                                             <td><?php echo $kembali; ?></td>                                            
                                             <td>
-                                            <a href="edittransaksi.php?id_transaksi= <?php echo $row['id_transaksi']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edittransaksi.php?id_transaksi=<?php echo $row['id_transaksi']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
                                             onClick="confirmModal('hapustransaksi.php?&id_transaksi=<?php echo $row['id_transaksi']; ?>');">
@@ -469,7 +469,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="modal-body">Pilih "Hapus" dibawah jika anda yakin ingin menghapus data.</div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
-                    <a class="btn btn-success btn-sm" href="tcustomer.php"  >Cancel</a>
+                    <a class="btn btn-success btn-sm" href="ttransaksi.php"  >Cancel</a>
                 </div>
             </div>
         </div>

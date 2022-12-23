@@ -7,9 +7,23 @@ if (!isset($_SESSION['id'])) {
     $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
     header('Location: login.php');
 }
+
 $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
+
+if( isset($_POST['insert']) ){
+    $cust = $_POST['txt_id'];
+    $nama = $_POST['txt_nama'];
+    $alamat = $_POST['txt_alamat'];
+    $hp = $_POST['txt_hp'];
+
+    $query = "INSERT INTO tb_customer (txt_nama, txt_alamat, txt_hp) VALUES ('$nama','$alamat','$hp')";
+    echo $query;
+    $result = mysqli_query($koneksi, $query);
+    header('Location: tcustomer.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +37,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EDIT PAKET</title>
+    <title>CUSTOMER</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

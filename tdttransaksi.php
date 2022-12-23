@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Data User</title>
+    <title>DETAIL TRANSAKSI</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -356,12 +356,12 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Detail Transaksi</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Table Customer</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Table Detail Transaksi</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -405,7 +405,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $biaya; ?></td>
                                             <td><?php echo $keterangan; ?></td>
                                             <td>
-                                            <a href="editdt.php?id_detail= <?php echo $row['id_detail']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="editdetailtransaksi.php?id_detail=<?php echo $row['id_detail']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
                                             onClick="confirmModal('hapusdetailtransaksi.php?&id_detail=<?php echo $row['id_detail']; ?>');">
