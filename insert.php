@@ -13,12 +13,12 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['insert']) ){
-    $cust = $_POST['txt_id'];
-    $nama = $_POST['txt_nama'];
-    $alamat = $_POST['txt_alamat'];
-    $hp = $_POST['txt_hp'];
+    $cust = $_POST['id_customer'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $hp = $_POST['no_hp'];
 
-    $query = "INSERT INTO tb_customer (txt_nama, txt_alamat, txt_hp) VALUES ('$nama','$alamat','$hp')";
+    $query = "INSERT INTO tb_customer (id_customer, nama, alamat, no_hp) VALUES ($cust','$nama','$alamat','$hp')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: tcustomer.php');
@@ -37,7 +37,7 @@ if( isset($_POST['insert']) ){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CUSTOMER</title>
+    <title>LAUNDRY MIRACLE BUBBLES</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -331,24 +331,33 @@ if( isset($_POST['insert']) ){
                                 <h1 class="h4 text-gray-900 mb-4">Tambah Customer</h1>
                             </div>
                             <form class="user" action="insert.php" method="POST">
-                                <div class="form-group">
+                            <div class="form-group">
+                                    <label>ID Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputUsername"
-                                        placeholder="Nama" name="txt_nama">
+                                        placeholder="ID Customer" name="id_customer">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nama</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername"
+                                        placeholder="Nama" name="nama">
                                 </div>
                                 <div class="form-group">
+                                    <label>Password</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Alamat" name="txt_alamat">
+                                        placeholder="Alamat" name="alamat">
                                 </div>
                                 <div class="form-group">
+                                    <label>No HP</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputPassword"
-                                        placeholder="No HP" name="txt_hp">
+                                        placeholder="No HP" name="no_hp">
                                 </div>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
-                                        <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">Simpan</button>
+                                        <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">Save</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="tcustomer.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="tcustomer.php" class="btn btn-secondary btn-user btn-block">Back</a>
                                     </div>
                                 </div>
                             </form>
