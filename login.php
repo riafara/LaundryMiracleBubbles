@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>LAUNDRY MIRACLE BUBBLES</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -120,6 +120,8 @@ if (isset($_POST['submit'])) {
                                     </form>
                                     <hr>
                                     <div class="text-center">
+                                    <a class="small" href="password.php">Forgot Password?</a> <br>
+
                                         <a class="small" href="register.php">Create an Account!</a>
                                     </div>
                                 </div>
