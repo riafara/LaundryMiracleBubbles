@@ -1,5 +1,5 @@
 <?php
-require("koneksi.php");
+require('koneksi.php');
 
 session_start();
 
@@ -12,13 +12,13 @@ $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
-if( isset($_POST['insert']) ){
-    $cust = $_POST['id_customer'];
-    $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
-    $hp = $_POST['no_hp'];
+if( isset($_POST['update']) ){
+    $cust     = $_POST['txt_id'];
+    $nama   = $_POST['txt_nama'];
+    $alamat   = $_POST['txt_alamat'];
+    $hp   = $_POST['txt_hp'];
 
-    $query = "INSERT INTO tb_customer (id_customer, nama, alamat, no_hp) VALUES ($cust','$nama','$alamat','$hp')";
+    $query = "INSERT INTO tb_customer (id_customer, nama, alamat, no_hp) VALUES ('$cust', '$nama', '$alamat', '$hp')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: tcustomer.php');
@@ -328,39 +328,38 @@ if( isset($_POST['insert']) ){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Tambah Customer</h1>
+                                <h1 class="h4 text-gray-900 mb-4">New Customer</h1>
                             </div>
                             <form class="user" action="insert.php" method="POST">
-                            <div class="form-group">
+                                <div class="form-group">
                                     <label>ID Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername"
-                                        placeholder="ID Customer" name="id_customer">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputId"
+                                        placeholder="ID Customer" name="txt_id">
                                 </div>
-
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername"
-                                        placeholder="Nama" name="nama">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNama"
+                                        placeholder="Nama" name="txt_nama">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Alamat" name="alamat">
+                                    <label>Alamat</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputAlamat"
+                                        placeholder="Alamat" name="txt_alamat">
                                 </div>
                                 <div class="form-group">
                                     <label>No HP</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword"
-                                        placeholder="No HP" name="no_hp">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputHp"
+                                        placeholder="No Hp" name="txt_hp">
                                 </div>
+                                <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
-                                        <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">Save</button>
+                                        <button type="submit" name="save" class="btn btn-primary btn-user btn-block">Save</button>
                                     </div>
                                     <div style="width: 125px;">
                                         <a href="tcustomer.php" class="btn btn-secondary btn-user btn-block">Back</a>
                                     </div>
                                 </div>
-                            </form>
                             </form>
                             
                         </div>
@@ -424,3 +423,4 @@ if( isset($_POST['insert']) ){
 </body>
 
 </html>
+<?php  ?>
