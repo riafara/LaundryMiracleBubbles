@@ -86,7 +86,7 @@ $sesLvl = $_SESSION['level'];
             <li class="nav-item active">
                 <a class="nav-link" href="tpaket.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Paket Laundry</span></a>
+                    <span>Paket </span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
