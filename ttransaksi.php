@@ -356,12 +356,12 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Transaksi</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Tabel Transaksi</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Table Transaksi</h6>
+                            
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -370,7 +370,7 @@ $sesLvl = $_SESSION['level'];
                                         <tr>
                                             <th>No</th>
                                             <th>Tanggal</th>
-                                            <th>ID</th>
+                                            <th>ID Transaksi</th>
                                             <th>Customer</th>
                                             <th>Nama Paket</th>
                                             <th>Qty</th>
