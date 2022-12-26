@@ -361,7 +361,7 @@ while ($row = mysqli_fetch_array($result)){
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="tpaket.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="tpaket.php" class="btn btn-secondary btn-user btn-block">Back</a>
                                     </div>
                                 </div>
                             </form>
