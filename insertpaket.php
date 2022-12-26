@@ -12,7 +12,7 @@ $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
-if( isset($_POST['update']) ){
+if( isset($_POST['insert']) ){
     $userId  = $_POST['txt_id'];
     $paket   = $_POST['txt_paket'];
     $harga   = $_POST['txt_harga'];
@@ -222,7 +222,7 @@ if( isset($_POST['update']) ){
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
-                                        <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Save</button>
+                                        <button type="submit" name="insert" class="btn btn-primary btn-user btn-block">Save</button>
                                     </div>
                                     <div style="width: 125px;">
                                         <a href="tpaket.php" class="btn btn-secondary btn-user btn-block">Back</a>
