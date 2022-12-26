@@ -94,7 +94,7 @@ if (isset($_POST['submit'])) {
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block"><img src="img/logo4.jpg"></div>
+                        <div class="col-lg-6 d-none d-lg-block"><img src="img/logo.png"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
