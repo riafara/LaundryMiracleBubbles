@@ -201,7 +201,7 @@ if( isset($_POST['update']) ){
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">New Transaksi</h1>
                                 </div>
-                                <form class="user" action="edittransaksi.php" method="POST">
+                                <form class="user" action="inserttransaksi.php" method="POST">
                                 <div class="form-group">
                                     <label>ID Transaksi</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputId"
