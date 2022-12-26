@@ -39,11 +39,11 @@ if( isset($_POST['register']) ){
 
     <div class="container">
 
-        <div class="card o-hidden border-0 shadow-lg" style="margin-top: 107px;">
+        <div class="card o-hidden border-0 shadow-lg" style="margin-top: 50px;">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block"><img src="img/logo.png"></div>
+                <div class="col-lg-5 d-none d-lg-block"><img src="img/logoo.jpg" style="width: 500px"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
@@ -66,6 +66,7 @@ if( isset($_POST['register']) ){
                             </form>
                             <hr>
                             <div class="text-center">
+                                <a class="small" href="password.php">Forgot Password?</a> <br>
                                 <a class="small" href="login.php">Already have an account? Login!</a>
                             </div>
                         </div>

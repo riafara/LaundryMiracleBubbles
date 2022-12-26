@@ -3,9 +3,10 @@ require('koneksi.php');
 
 if( isset($_POST['update']) ){
     $userId     = $_POST['txt_id'];
+    $userMail = $_POST['txt_email'];
     $userPass   = $_POST['txt_pass'];
 
-    $query = "UPDATE user_detail SET user_password='$userPass' WHERE id='$userId'";
+    $query = "UPDATE user_detail SET user_password='$userPass' WHERE id='$userId' && user_email='$userMail'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: login.php');
@@ -40,40 +41,40 @@ if( isset($_POST['update']) ){
 
     <div class="container">
 
-        <div class="card o-hidden border-0 shadow-lg" style="margin-top: 107px;">
+        <div class="card o-hidden border-0 shadow-lg" style="margin-top: 50px;">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-5 d-none d-lg-block"><img src="img/logoo.jpg" style="width: 500px"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Forgot Password?</h1>
                             </div>
-                            <form class="user" action="edit.php" method="POST">
+                            <form class="user" action="password.php" method="POST">
                             <div class="form-group">
-                                    <label>ID</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputId"
                                         placeholder="Your ID" name="txt_id">
                                 </div>
-                                
                                 <div class="form-group">
-                                    <label>Password</label>
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Email Address" name="txt_email">
+                                </div>
+                                <div class="form-group">
                                     <input type="password" class="form-control form-control-user" id="exampleInputPassword"
                                         placeholder="New Password" name="txt_pass">
                                 </div>
-                                
-                                <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
-                                    <div class="px-3" style="width: 150px;">
-                                        <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
-                                    </div>
-                                    <div style="width: 125px;">
-                                        <a href="login.php" class="btn btn-secondary btn-user btn-block">Back</a>
+                                    <div class="px-3" style="width: 560px;">
+                                        <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Reset Password</button>
                                     </div>
                                 </div>
-                            </form>
-                            
+                            </form><br><br>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="register.php">Create an Account!</a> <br>
+                                <a class="small" href="login.php">Already have an account? Login!</a>
+                            </div>
                            
                         </div>
                     </div>
