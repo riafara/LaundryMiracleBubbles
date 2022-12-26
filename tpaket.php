@@ -183,9 +183,11 @@ $sesLvl = $_SESSION['level'];
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                    <div style="width: 150px;" >
-                         <a href="insertpaket.php" class="btn btn-primary btn-user btn-block">Add New Data</a>
-                    </div>
+                    <div class="card-header py-3">
+                            <div style="width: 150px;" >
+                            <a href="insertpaket.php" class="btn btn-primary btn-user btn-block">Add New Data</a>
+                            </div>
+                        </div>
                        
                         <div class="card-body">
                             <div class="table-responsive">
