@@ -50,7 +50,8 @@ if( isset($_POST['insert']) ){
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <!-- CSS Bootstrap Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
 </head>
 
 <body id="page-top">
@@ -294,7 +295,7 @@ if( isset($_POST['insert']) ){
                 </div>
             </div>
         </div>
-    
+       
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
