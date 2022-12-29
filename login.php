@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $pass = $_POST['txt_pass'];
     
     if (!empty(trim($email)) && !empty(trim($pass))) {
-        $query      = "SELECT * FROM id_user WHERE username = '$email'";
+        $query      = "SELECT * FROM user_detail WHERE user_email = '$email'";
         $result     = mysqli_query($koneksi, $query);
         $num        = mysqli_num_rows($result);
 
@@ -94,11 +94,7 @@ if (isset($_POST['submit'])) {
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                        <div class="col-lg-5 d-none d-lg-block"><img src="img/logoo.jpg" style="width: 500px"></div>
-                            <div class="col-lg-7">
-                                <div class="p-5">
-                                    <div class="text-center"><br>
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                        hhh
                                     </div>
                                     <form class="user" action="login.php" method="post">
                                         <div class="form-group">
