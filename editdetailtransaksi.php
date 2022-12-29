@@ -217,11 +217,11 @@ while ($row = mysqli_fetch_array($result)) {
                                     </div>
                                     <div class="form-group">
                                         <label>ID Transaksi</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="txt_idt" value="<?php echo $idt; ?>" >
+                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="txt_idt" value="<?php echo $transaksi; ?>" >
                                     </div>
                                     <div class="form-group">
-                                        <label>ID Paket</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="txt_idp" value="<?php echo $idp; ?>">
+                                        <label>Paket</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="txt_idp" value="<?php echo $pkt; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Qty</label>
