@@ -195,8 +195,9 @@ $sesLvl = $_SESSION['level'];
                                             <th>No</th>
                                             <th>Tanggal</th>
                                             <th>ID Transaksi</th>
-                                            <th>Customer</th>
-                                            <th>Nama Paket</th>
+                                            <th>ID Customer</th>
+                                            <th>Nama</th>
+                                            <th>Paket</th>
                                             <th>Qty</th>
                                             <th>Harga</th>
                                             <th>Bayar</th>
@@ -219,6 +220,7 @@ $sesLvl = $_SESSION['level'];
                                                 $tgl     = $row['tanggal'];
                                                 $id      = $row['id_transaksi'];
                                                 $cust    = $row['id_customer'];
+                                                $nama    = $row['nama'];
                                                 $paket   = $row['id_paket'];
                                                 $qty     = $row['qty'];
                                                 $harga   = $row['biaya'];
@@ -230,6 +232,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $tgl; ?></td>
                                             <td><?php echo $id; ?></td>
                                             <td><?php echo $cust; ?></td>
+                                            <td><?php echo $nama; ?></td>
                                             <td><?php echo $paket; ?></td>
                                             <td><?php echo $qty; ?></td>
                                             <td><?php echo $harga; ?></td>
