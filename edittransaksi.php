@@ -16,13 +16,14 @@ if( isset($_POST['update']) ){
     $transaksi = $_POST['txt_id'];
     $tgl = $_POST['txt_tgl'];
     $cust = $_POST['txt_idc'];
+    $nama = $_POST['txt_nama'];
     $pkt = $_POST['txt_idp'];
     $qty = $_POST['txt_qty'];
     $biaya = $_POST['txt_biaya'];
     $bayar = $_POST['txt_bayar'];
     $kembali = $_POST['txt_kembali'];
 
-    $query = "UPDATE tb_transaksi SET tanggal='$tgl', id_customer='$cust', id_paket='$pkt', qty='$qty', biaya='$biaya', bayar='$bayar', kembalian='$kembali' WHERE id_transaksi='$transaksi'";
+    $query = "UPDATE tb_transaksi SET tanggal='$tgl', id_customer='$cust', nama='$nama', id_paket='$pkt', qty='$qty', biaya='$biaya', bayar='$bayar', kembalian='$kembali' WHERE id_transaksi='$transaksi'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');
@@ -32,11 +33,12 @@ $query = "SELECT * FROM tb_transaksi WHERE id_transaksi='$id'";
 $result = mysqli_query($koneksi, $query)or die(mysqli_errno($koneksi));
 
 while ($row = mysqli_fetch_array($result)) {
-    $id = $row['id_transaksi'];
-    $tgl = $row['tanggal'];
-    $cust = $row['id_customer'];
-    $pkt = $row['id_paket'];
-    $qty = $row['qty'];
+    $id    = $row['id_transaksi'];
+    $tgl   = $row['tanggal'];
+    $cust  = $row['id_customer'];
+    $nama  = $row['nama'];
+    $pkt   = $row['id_paket'];
+    $qty   = $row['qty'];
     $biaya = $row['biaya'];
     $bayar = $row['bayar'];
     $kembali = $row['kembalian'];
@@ -360,7 +362,11 @@ while ($row = mysqli_fetch_array($result)) {
                                         <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="txt_idc" value="<?php echo $cust; ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>ID Paket</label>
+                                        <label>Nama</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputNama" name="txt_nama" value="<?php echo $nama; ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Paket</label>
                                         <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="txt_idp" value="<?php echo $pkt; ?>">
                                     </div>
                                     <div class="form-group">
