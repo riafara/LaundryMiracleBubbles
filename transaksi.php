@@ -17,6 +17,7 @@ require ("koneksi.php");
                 <td>ID Transaksi</td>
                 <td>Tanggal Transaksi</td>
                 <td>ID Customer</td>
+                <td>Nama</td>
                 <td>ID Paket</td>
                 <td>Qty</td>
                 <td>Harga</td>
@@ -36,6 +37,7 @@ require ("koneksi.php");
                 $transaksi = $row['id_transaksi'];
                 $tgl = $row['tanggal'];
                 $cust = $row['id_customer'];
+                $nama = $row['nama'];
                 $pkt = $row['id_paket'];
                 $qty = $row['qty'];
                 $biaya = $row['biaya'];
@@ -47,6 +49,7 @@ require ("koneksi.php");
                 <td><?php echo $transaksi; ?></td>
                 <td><?php echo $tgl; ?></td>
                 <td><?php echo $cust; ?></td>
+                <td><?php echo $nama; ?></td>
                 <td><?php echo $pkt; ?></td>
                 <td><?php echo $qty; ?></td>
                 <td><?php echo $biaya; ?></td>
