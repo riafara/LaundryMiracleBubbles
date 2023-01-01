@@ -16,13 +16,14 @@ if( isset($_POST['insert']) ){
     $transaksi = $_POST['txt_id'];
     $tgl = $_POST['txt_tgl'];
     $cust = $_POST['txt_idc'];
+    $nama = $_POST['txt_nama'];
     $pkt = $_POST['txt_idp'];
     $qty = $_POST['txt_qty'];
     $biaya = $_POST['txt_biaya'];
     $bayar = $_POST['txt_bayar'];
     $kembali = $_POST['txt_kembali'];
 
-    $query = "INSERT INTO tb_transaksi (id_transaksi, tanggal, id_customer, id_paket, qty, biaya, bayar, kembalian) VALUES ('$transaksi', '$tgl', '$cust', '$pkt', '$qty', '$biaya', '$bayar', '$kembali')";
+    $query = "INSERT INTO tb_transaksi (id_transaksi, tanggal, id_customer, nama, id_paket, qty, biaya, bayar, kembalian) VALUES ('$transaksi', '$tgl', '$cust', '$nama', $pkt', '$qty', '$biaya', '$bayar', '$kembali')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');
@@ -219,7 +220,12 @@ if( isset($_POST['insert']) ){
                                         placeholder="CST001" name="txt_idc">
                                 </div>
                                 <div class="form-group">
-                                    <label>ID Paket</label>
+                                    <label>Nama</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNama"
+                                        placeholder="Nama" name="txt_nama">
+                                </div>
+                                <div class="form-group">
+                                    <label>Paket</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputPkt"
                                         placeholder="PKT001" name="txt_idp">
                                 </div>
