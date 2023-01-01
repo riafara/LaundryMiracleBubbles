@@ -2,7 +2,7 @@
 require ("koneksi.php");
 header('Content-Type: application/json');
 
-$sqlQuery = "SELECT * FROM sample_jual ORDER BY id_user";
+$sqlQuery = "SELECT * FROM tb_transaksi ORDER BY tanggal";
 
 $result = mysqli_query($koneksi, $sqlQuery);
 
