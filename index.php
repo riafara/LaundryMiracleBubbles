@@ -103,7 +103,6 @@ if( isset($_POST['insert']) ){
                         <a class="collapse-item" href="tcustomer.php">Customer</a>
                         <a class="collapse-item" href="tpaket.php">Paket</a>
                         <a class="collapse-item" href="ttransaksi.php">Transaksi</a>
-                        <a class="collapse-item" href="tdttransaksi.php">Detail Transaksi</a>
                     </div>
                 </div>
                
