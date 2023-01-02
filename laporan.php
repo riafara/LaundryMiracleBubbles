@@ -1,336 +1,234 @@
-<?php
-require("koneksi.php");
-
-session_start();
-
-if (!isset($_SESSION['id'])) {
-    $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
-    header('Location: login.php');
-}
-$sesID = $_SESSION['id'];
-$sesName = $_SESSION['name'];
-$sesLvl = $_SESSION['level'];
-?>
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SI-BARANG</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="../bower_components/morris.js/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="../bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <style media="screen">
+    .box {padding: 20px 15px 15px 20px }
+    th{text-align: center;}
+  </style>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>LAUNDRY MIRACLE BUBBLES</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
-<body id="page-top">
+  <header class="main-header">
+    <!-- Logo -->
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+  <!-- Logo -->
+  <a href="#" class="logo">
+    <span class="logo-lg">SI-BARANG</span>
+  </a>
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- Messages: style can be found in dropdown.less-->
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3"> MIRACLE BUBBLES </div>
-            </a>
+        <!-- User Account Menu -->
+          <li>
+          <!-- Menu Toggle Button -->
+          <a href="../../index.php" >
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">
-                    <span>Dashboard</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <span>MiracleBubbles</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="tables.php">User</a>
-                        <a class="collapse-item" href="tcustomer.php">Customer</a>
-                        <a class="collapse-item" href="tpaket.php">Paket</a>
-                        <a class="collapse-item" href="ttransaksi.php">Transaksi</a>
-                        <a class="collapse-item" href="tdttransaksi.php">Detail Transaksi</a>
-                    </div>
-                </div>
-               
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">
-                    <span>Laporan</span></a>
-            </li>
-            
-
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-                       
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $sesName; ?></span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                
-                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <div style="width: 150px;" >
-                            <a href="insert.php" class="btn btn-primary btn-user btn-block">Add New Data</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>ID Customer</th>
-                                            <th>Nama</th>
-                                            <th>Alamat</th>
-                                            <th>No Hp</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                             $query  = "SELECT * FROM tb_customer";
-                                             $result = mysqli_query($koneksi, $query);
-                                             $no     = 1;   
-                                            if ($sesLvl == 1) {
-                                                $dis = "";    
-                                            }else{
-                                                $dis = "disabled";
-                                            }        
-                                            while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id_customer'];
-                                                $nama = $row['nama'];
-                                                $alamat = $row['alamat'];
-                                                $hp = $row['no_hp'];
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td><?php echo $userId; ?></td>
-                                            <td><?php echo $nama; ?></td>
-                                            <td><?php echo $alamat; ?></td>
-                                            <td><?php echo $hp; ?></td>
-                                            <td>
-                                            <a href="customeredit.php?id_customer=<?php echo $row['id_customer']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
-
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('customerhapus.php?&id_customer=<?php echo $row['id_customer']; ?>');">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                            $no++;
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Miracle Bubbles 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
+            Keluar
+          </a>
+        </li>
+      </ul>
     </div>
-    <!-- End of Page Wrapper -->
+  </nav>
+  </header>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="active"><a href="../pemilik/databarang.php"><span>Data Barang</span></a></li>
+        <li class="active"><a href="../pemilik/laporan.php"><span>Laporan</span></a></li>
+      </ul>
 
-    <!--Delete Modal-->
-    <div class="modal fade" id="modalDelete">
-        <div class="modal-dialog">
-            <div class="modal-content" style="margin-top:100px;">
-                <div class="modal-header">
-                    <h4 class="modal-title" style="text-align:center;">Hapus data ini?</h4>
-                    <button type="button" class="close" data-dismiss="modal" ariahidden="true">&times;</button>
-                </div>
-                <div class="modal-body">Pilih "Hapus" dibawah jika anda yakin ingin menghapus data.</div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
-                    <a class="btn btn-success btn-sm" href="tcustomer.php"  >Cancel</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
 
-    <!-- Javascript untuk popup modal Delete-->
-    <script type="text/javascript">
-    function confirmModal(delete_url){
-        $('#modalDelete').modal('show', {backdrop: 'static'});
-        document.getElementById('delete_link').setAttribute('href' , delete_url);
-    }
-    </script>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Laporan Penjualan
+      </h1>
+      <br>
+    </section>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Main content -->
+    <section class="content container-fluid">
+      <!-- Isi -->
+  			<!-- Tombol Tambah Data -->
+        <div class="box box-info">
+  		<!-- Table
+  		Table -->
+  		<div class="box-body" >
+  			<table  class="table table-striped table-bordered" >
+  				<thead>
+  					<tr>
+  						<th>No</th>
+  						<th>Tahun</th>
+  						<th>Bulan</th>
+  						<th style="text-align: center;" >Aksi</th>
+  					</tr>
+  				</thead>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  				<tbody>
+              <?php
+                include "../../koneksi.php";
+                $halaman = @$_GET['halaman'];
+                if (empty($halaman)) {
+                  $posisi = 0;
+                  $halaman = 1;
+                } else {
+                  $posisi = ($halaman-1) * 5;
+                }
+                $i = $posisi + 1;
+                $sql = mysqli_query($conn, "SELECT DISTINCT date_format(tanggal, '%Y') as tahun, date_format(tanggal, '%M') as bulan  FROM `pemesanan` LIMIT $posisi, 5");
+                while ($hasil = mysqli_fetch_array($sql)) {
+             ?>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+              <tr>
+    						<td style="text-align: center;"><?php echo $i; ?></td>
+                <td><?php echo $hasil['tahun']; ?></td>
+                <td><?php echo $hasil['bulan']; ?></td>
+    						<td style="text-align: center;"><a href="download-laporan.php?tahun=<?php echo $hasil['tahun']; ?>&bulan=<?php echo $hasil['bulan']; ?>">Download</a></td>
+  					  </tr>
+              <?php
+        		 			$i++;
+        		 			}
+                ?>
+  				</tbody>
+  			</table>
+  		</div>
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+      <center>
+      	<nav aria-label="Page navigation example">
+          <ul class="pagination">
+              <!-- LINK FIRST AND PREV -->
+              <?php
+              if($halaman == 1){ // Jika page adalah page ke 1, maka disable link PREV
+              ?>
+                <li class="disabled"><a href="#">&laquo;</a></li>
+              <?php
+              }else{ // Jika page bukan page ke 1
+                $link_prev = ($halaman > 1)? $halaman - 1 : 1;
+              ?>
+                <li><a href="laporan.php?halaman=<?php echo $link_prev; ?>">&laquo;</a></li>
+              <?php
+              }
+              ?>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+              <!-- LINK NUMBER -->
+              <?php
+              // Buat query untuk menghitung semua jumlah data
+              $res = mysqli_query($conn, "SELECT * FROM pemesanan");
+              $hitung = mysqli_num_rows($res);
+              $jum = $hitung / 5;
+              $jumlah = ceil($jum);
+              for ($i=1; $i <= $jumlah ; $i++) {
+                   echo "<li><a href='laporan.php?halaman=$i'>".$i."</a></li>";
+               }
 
+              ?>
+
+              <!-- LINK NEXT AND LAST -->
+              <?php
+              // Jika page sama dengan jumlah page, maka disable link NEXT nya
+              // Artinya page tersebut adalah page terakhir
+              if($halaman == $jumlah){ // Jika page terakhir
+              ?>
+                <li class="disabled"><a href="#">&raquo;</a></li>
+              <?php
+              }else{ // Jika Bukan page terakhir
+                $link_next = ($halaman < $jumlah)? $halaman + 1 : $jumlah;
+              ?>
+                <li><a href="laporan.php?page=<?php echo $link_next; ?>">&raquo;</a></li>
+              <?php
+              }
+              ?>
+            </ul>
+
+      </nav>
+      </center>
+
+    </section>
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <strong>Copyright Kelompok ADSI &copy; 2017
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
 </body>
-
+</html>
