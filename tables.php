@@ -202,7 +202,7 @@ $sesLvl = $_SESSION['level'];
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM user_detail";
+                                            $query = "SELECT * FROM tb_user";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
