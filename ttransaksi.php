@@ -79,7 +79,7 @@ $sesLvl = $_SESSION['level'];
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">
-                    <span>Laporan</span></a>
+                    <span>Graph</span></a>
             </li>
             
 
@@ -203,7 +203,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Bayar</th>
                                             <th>Kembali</th>
                                             <th>Aksi</th>
-</tr>                                        </tr>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <?php

@@ -44,17 +44,7 @@ $jml_user = mysqli_num_rows($query4);
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-    <style type="text/css">
-        BODY{
-            width: auto;
-        }
-        #chart-container{
-            width: 100%;
-            height: auto;
-        }
-        </style>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -67,8 +57,8 @@ $jml_user = mysqli_num_rows($query4);
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div >
+                    <img src="img/logoo.jpg" style="width: 50px">
                 </div>
                 <div class="sidebar-brand-text mx-3"> MIRACLE BUBBLES </div>
             </a>
@@ -79,13 +69,15 @@ $jml_user = mysqli_num_rows($query4);
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">
+                <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <span>MiracleBubbles</span>
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                    <span>Data Master</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -100,6 +92,7 @@ $jml_user = mysqli_num_rows($query4);
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="bar.php">
+                <i class="fas fa-fw fa-chart-line"></i>
                     <span>Graph</span></a>
             </li>
             
@@ -127,19 +120,7 @@ $jml_user = mysqli_num_rows($query4);
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -177,8 +158,7 @@ $jml_user = mysqli_num_rows($query4);
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $sesName; ?></span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <i class="fa fa-user" aria-hidden="true"></i>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -201,7 +181,7 @@ $jml_user = mysqli_num_rows($query4);
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard Laundry MiracleBubbles</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -214,11 +194,11 @@ $jml_user = mysqli_num_rows($query4);
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                <a href="tables.php">User</a></div>
+                                                <a href="tables.php">Staff</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_user,0,",",".")?></div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fa fa-user fa-2x text-gray-300" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +216,7 @@ $jml_user = mysqli_num_rows($query4);
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_customer,0,",",".")?></div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fa fa-users fa-2x text-gray-300" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -250,11 +230,12 @@ $jml_user = mysqli_num_rows($query4);
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                <a href="tpaket.php">Paket Laundry</a></div>
+                                                <a href="tpaket.php">Layanan Laundry</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_paket,0,",",".")?></div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fa fa-tasks fa-2x text-gray-300" aria-hidden="true"></i>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -272,7 +253,8 @@ $jml_user = mysqli_num_rows($query4);
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_transaksi,0,",",".")?></div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fa fa-shopping-cart fa-2x text-gray-300" aria-hidden="true"></i>
+                                            
                                         </div>
                                     </div>
                                 </div>
