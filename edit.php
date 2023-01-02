@@ -18,13 +18,13 @@ if( isset($_POST['update']) ){
     $userPass   = $_POST['txt_pass'];
     $userName   = $_POST['txt_nama'];
 
-    $query = "UPDATE user_detail SET user_password='$userPass', user_fullname='$userName' WHERE id='$userId'";
+    $query = "UPDATE tb_user SET user_password='$userPass', user_fullname='$userName' WHERE id='$userId'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: tables.php');
 }
 $id = $_GET['id'];
-$query = "SELECT * FROM user_detail WHERE id='$id'";
+$query = "SELECT * FROM tb_user WHERE id='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){

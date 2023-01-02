@@ -35,7 +35,7 @@ $sesLvl = $_SESSION['level'];
                 <td colspan="2"></td>
             </tr>
             <?php
-            $query  = "SELECT * FROM user_detail";
+            $query  = "SELECT * FROM tb_user";
             $result = mysqli_query($koneksi, $query);
             $no     = 1;
 

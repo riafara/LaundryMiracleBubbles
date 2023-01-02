@@ -16,7 +16,7 @@ require ("koneksi.php");
             <td>Level</td>
         </tr>
         <?php
-        $query = "SELECT* FROM user_detail";
+        $query = "SELECT* FROM tb_user";
         $result = mysqli_query($koneksi, $query);
         
        // while($row = mysqli_fetch_array($result)){

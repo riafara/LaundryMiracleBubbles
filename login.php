@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $pass = $_POST['txt_pass'];
     
     if (!empty(trim($email)) && !empty(trim($pass))) {
-        $query      = "SELECT * FROM user_detail WHERE user_email = '$email'";
+        $query      = "SELECT * FROM tb_user WHERE user_email = '$email'";
         $result     = mysqli_query($koneksi, $query);
         $num        = mysqli_num_rows($result);
 
@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
                             <div class="col-lg-7">
                                 <div class="p-5">
                                     <div class="text-center"><br>
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back</h1>
                                     </div>
                                     <form class="user" action="login.php" method="post">
                                         <div class="form-group">
