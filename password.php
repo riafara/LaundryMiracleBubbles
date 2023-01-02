@@ -6,7 +6,7 @@ if( isset($_POST['update']) ){
     $userMail = $_POST['txt_email'];
     $userPass   = $_POST['txt_pass'];
 
-    $query = "UPDATE user_detail SET user_password='$userPass' WHERE id='$userId' && user_email='$userMail'";
+    $query = "UPDATE tb_user SET user_password='$userPass' WHERE id='$userId' && user_email='$userMail'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: login.php');
