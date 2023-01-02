@@ -103,7 +103,6 @@ if( isset($_POST['insert']) ){
                         <a class="collapse-item" href="tcustomer.php">Customer</a>
                         <a class="collapse-item" href="tpaket.php">Paket</a>
                         <a class="collapse-item" href="ttransaksi.php">Transaksi</a>
-                        <a class="collapse-item" href="tdttransaksi.php">Detail Transaksi</a>
                     </div>
                 </div>
                
@@ -200,7 +199,7 @@ if( isset($_POST['insert']) ){
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        <a href="cetak.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
