@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 02, 2023 at 03:04 AM
+-- Generation Time: Jan 02, 2023 at 01:04 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -40,31 +40,15 @@ CREATE TABLE `tb_customer` (
 
 INSERT INTO `tb_customer` (`id_customer`, `nama`, `alamat`, `no_hp`) VALUES
 ('CSR001', 'Sindi Sukma Wati', 'Perum Mastrip', '089876543543'),
-('CSR002', 'Emiliya', 'Sumbersari Jember', '088765432156');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_detail_transaksi`
---
-
-CREATE TABLE `tb_detail_transaksi` (
-  `id_detail` varchar(10) NOT NULL,
-  `id_transaksi` varchar(10) NOT NULL,
-  `id_paket` varchar(10) NOT NULL,
-  `qty` int NOT NULL,
-  `biaya` int NOT NULL,
-  `keterangan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `tb_detail_transaksi`
---
-
-INSERT INTO `tb_detail_transaksi` (`id_detail`, `id_transaksi`, `id_paket`, `qty`, `biaya`, `keterangan`) VALUES
-('DTRS001', 'TRS001', 'PKT001', 7, 32000, ''),
-('DTRS002', 'TRS002', 'PKT001', 5, 20000, ''),
-('DTRS003', 'TRS003', 'PKT002', 8, 40000, '');
+('CSR002', 'Emiliya', 'Sumbersari Jember', '088765432156'),
+('CSR003', 'Rasyid Ridhowi', 'Perum Puri', '089765432123'),
+('CSR004', 'Marisa', 'Perum Mastrip', '087698654345'),
+('CSR005', 'Vania', 'Jember', '0876789876543'),
+('CSR006', 'Caca', 'Jember', '087987654321'),
+('CSR007', 'Ria Fara', 'Perum Mastrip', '089345675432'),
+('CSR008', 'Lutfa', 'Tegalgede', '087654765345'),
+('CSR009', 'Yuyun', 'Kaliurang', '087654876543'),
+('CSR010', 'Lelita', 'Kaliurang', '089765432345');
 
 -- --------------------------------------------------------
 
@@ -85,7 +69,11 @@ CREATE TABLE `tb_paket` (
 
 INSERT INTO `tb_paket` (`id_paket`, `paket`, `harga_kilo`, `deskripsi`) VALUES
 ('PKT001', 'Cuci Kering', 4000, 'Selesai 3 hari'),
-('PKT002', 'Cuci Setrika', 5000, 'Selesai 3 hari');
+('PKT002', 'Cuci Setrika', 5000, 'Selesai 3 hari'),
+('PKT003', 'Cuci Kering', 5000, 'Selesai 2 hari'),
+('PKT004', 'Cuci Setrika', 6000, 'Selesai 2 hari'),
+('PKT005', 'Cuci Kering', 6000, 'Selesai 1 hari'),
+('PKT006', 'Cuci Setrika', 7000, 'Selesai 1 hari');
 
 -- --------------------------------------------------------
 
@@ -112,7 +100,9 @@ CREATE TABLE `tb_transaksi` (
 INSERT INTO `tb_transaksi` (`id_transaksi`, `tanggal`, `id_customer`, `nama`, `id_paket`, `qty`, `biaya`, `bayar`, `kembalian`) VALUES
 ('TRS001', '2022-09-15', 'CSR001', 'Sindi Sukma Wati', 'PKT001', 7, 32000, 50000, 18000),
 ('TRS002', '2022-10-18', 'CSR002', 'Emiliya', 'PKT001', 5, 20000, 50000, 30000),
-('TRS003', '2022-10-23', 'CSR001', 'Sindi Sukma Wati', 'PKT002', 8, 40000, 55000, 15000);
+('TRS003', '2022-10-23', 'CSR001', 'Sindi Sukma Wati', 'PKT002', 8, 40000, 55000, 15000),
+('TRS004', '2022-11-13', 'CSR004', 'Marisa', 'PKT002', 3, 15000, 20000, 5000),
+('TRS005', '2022-11-15', 'CSR005', 'Vania', 'PKT001', 5, 20000, 20000, 0);
 
 -- --------------------------------------------------------
 
@@ -133,11 +123,8 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id`, `user_email`, `user_password`, `user_fullname`, `level`) VALUES
-(2, 'admin@admin.com', '12344321', 'adminn', 1),
-(5, 'riafara@user.com', '12345678', 'riafaraa', 2),
-(6, 'dhila@user.com', '123455454', 'dhila', 2),
-(9, 'ria@user.com', '12344321', 'faradhila', 2),
-(11, 'sindisukma@gmail.com', '12344321', 'sindisukma', 2);
+(1, 'admin@admin.com', '12344321', 'admin', 1),
+(2, 'owner@owner.com', '12345678', 'owner', 2);
 
 --
 -- Indexes for dumped tables
@@ -148,14 +135,6 @@ INSERT INTO `tb_user` (`id`, `user_email`, `user_password`, `user_fullname`, `le
 --
 ALTER TABLE `tb_customer`
   ADD PRIMARY KEY (`id_customer`);
-
---
--- Indexes for table `tb_detail_transaksi`
---
-ALTER TABLE `tb_detail_transaksi`
-  ADD PRIMARY KEY (`id_detail`),
-  ADD KEY `id_transaksi` (`id_transaksi`),
-  ADD KEY `id_paket` (`id_paket`);
 
 --
 -- Indexes for table `tb_paket`
@@ -188,7 +167,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
