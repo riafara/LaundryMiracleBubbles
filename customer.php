@@ -13,7 +13,7 @@ require ("koneksi.php");
         <!-- <h1>Selamat Datang <?php echo $email;?></h1> -->
         <table border='2' style="text-align:center">
             <tr>
-                <td>No</td>
+                <td>NO</td>
                 <td>ID Customer</td>
                 <td>Nama</td>
                 <td>Alamat</td>
