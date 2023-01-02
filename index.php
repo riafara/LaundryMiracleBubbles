@@ -20,6 +20,24 @@ $query3 = $koneksi->query("SELECT * FROM tb_transaksi");
 $jml_transaksi = mysqli_num_rows($query3);
 $query4 = $koneksi->query("SELECT * FROM tb_user");
 $jml_user = mysqli_num_rows($query4);
+
+if( isset($_POST['insert']) ){
+    $transaksi = $_POST['txt_id'];
+    $tgl = $_POST['txt_tgl'];
+    $cust = $_POST['txt_idc'];
+    $nama = $_POST['txt_nama'];
+    $pkt = $_POST['txt_idp'];
+    $qty = $_POST['txt_qty'];
+    $biaya = $_POST['txt_biaya'];
+    $bayar = $_POST['txt_bayar'];
+    $kembali = $_POST['txt_kembali'];
+
+    $query = "INSERT INTO tb_transaksi (id_transaksi, tanggal, id_customer, nama, id_paket, qty, biaya, bayar, kembalian) VALUES ('$transaksi', '$tgl', '$cust', '$nama', '$pkt', '$qty', '$biaya', '$bayar', '$kembali')";
+    echo $query;
+    $result = mysqli_query($koneksi, $query);
+    header('Location: ttransaksi.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +95,7 @@ $jml_user = mysqli_num_rows($query4);
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa fa-table" aria-hidden="true"></i>
-                    <span>Data Master</span>
+                    <span>Data Laundry</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -262,7 +280,76 @@ $jml_user = mysqli_num_rows($query4);
                         </div>
 
                     <!-- Content Row -->
-
+                    <div class="container">
+            <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
+                <div class="card-body w-75 vh-50 ">
+                    <!-- Nested Row within Card Body -->
+    
+    
+                    <div class="p-2">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">New Data</h1>
+                            </div>
+                            <form class="user" action="inserttransaksi.php" method="POST">
+                                <div class="form-group">
+                                    <label>ID Transaksi</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputId"
+                                        placeholder="ID Transaksi" name="txt_id">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputTgl"
+                                        placeholder="yyyy-mm-dd" name="txt_tgl">
+                                </div>
+                                <div class="form-group">
+                                    <label>ID Customer</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputIdc"
+                                        placeholder="id cust" name="txt_idc">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nama Customer</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNama"
+                                        placeholder="Nama" name="txt_nama">
+                                </div>
+                                <div class="form-group">
+                                    <label>Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputIdp"
+                                        placeholder="paket" name="txt_idp">
+                                </div>
+                                <div class="form-group">
+                                    <label>Qty</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputQty"
+                                        placeholder="Qty" name="txt_qty">
+                                </div>
+                                <div class="form-group">
+                                    <label>Biaya</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputBiaya"
+                                        placeholder="Biaya" name="txt_biaya">
+                                </div>
+                                <div class="form-group">
+                                    <label>Bayar</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputBayar"
+                                        placeholder="Byaar" name="txt_bayar">
+                                </div>
+                                <div class="form-group">
+                                    <label>Kembali</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
+                                        placeholder="Kembali" name="txt_kembali">
+                                </div>
+                                <hr>
+                                <div class="form-group row" style="position: relative; float: right; ">
+                                    <div class="px-3" style="width: 150px;">
+                                        <button type="submit" name="insert" class="btn btn-primary btn-user btn-block">Save</button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
                     
             <!-- End of Main Content -->
 

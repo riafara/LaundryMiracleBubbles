@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 01, 2023 at 02:18 PM
+-- Generation Time: Jan 02, 2023 at 03:04 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -117,10 +117,10 @@ INSERT INTO `tb_transaksi` (`id_transaksi`, `tanggal`, `id_customer`, `nama`, `i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_detail`
+-- Table structure for table `tb_user`
 --
 
-CREATE TABLE `user_detail` (
+CREATE TABLE `tb_user` (
   `id` int NOT NULL,
   `user_email` varchar(50) NOT NULL,
   `user_password` varchar(50) NOT NULL,
@@ -129,10 +129,10 @@ CREATE TABLE `user_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `user_detail`
+-- Dumping data for table `tb_user`
 --
 
-INSERT INTO `user_detail` (`id`, `user_email`, `user_password`, `user_fullname`, `level`) VALUES
+INSERT INTO `tb_user` (`id`, `user_email`, `user_password`, `user_fullname`, `level`) VALUES
 (2, 'admin@admin.com', '12344321', 'adminn', 1),
 (5, 'riafara@user.com', '12345678', 'riafaraa', 2),
 (6, 'dhila@user.com', '123455454', 'dhila', 2),
@@ -174,9 +174,9 @@ ALTER TABLE `tb_transaksi`
   ADD KEY `id_customer` (`id_customer`);
 
 --
--- Indexes for table `user_detail`
+-- Indexes for table `tb_user`
 --
-ALTER TABLE `user_detail`
+ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `level` (`level`);
 
@@ -185,9 +185,9 @@ ALTER TABLE `user_detail`
 --
 
 --
--- AUTO_INCREMENT for table `user_detail`
+-- AUTO_INCREMENT for table `tb_user`
 --
-ALTER TABLE `user_detail`
+ALTER TABLE `tb_user`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
