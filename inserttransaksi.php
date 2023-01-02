@@ -1,5 +1,5 @@
 <?php
-require ('koneksi.php');
+require('koneksi.php');
 
 session_start();
 
@@ -23,11 +23,12 @@ if( isset($_POST['insert']) ){
     $bayar = $_POST['txt_bayar'];
     $kembali = $_POST['txt_kembali'];
 
-    $query = "INSERT INTO tb_transaksi (id_transaksi, tanggal, id_customer, nama, id_paket, qty, biaya, bayar, kembalian) VALUES ('$transaksi', '$tgl', '$cust', '$nama', $pkt', '$qty', '$biaya', '$bayar', '$kembali')";
+    $query = "INSERT INTO tb_transaksi (id_transaksi, tanggal, id_customer, nama, id_paket, qty, biaya, bayar, kembalian) VALUES ('$transaksi', '$tgl', '$cust', '$nama', '$pkt', '$qty', '$biaya', '$bayar', '$kembali')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +52,7 @@ if( isset($_POST['insert']) ){
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- CSS Bootstrap Datepicker -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+
 </head>
 
 <body id="page-top">
@@ -193,41 +193,41 @@ if( isset($_POST['insert']) ){
 
                 </nav>
                 <!-- End of Topbar -->
-        <div class="container">
-            <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
-                <div class="card-body w-75 vh-50 ">
-                    <!-- Nested Row within Card Body -->
-    
-    
-                            <div class="p-2">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">New Transaksi</h1>
-                                </div>
-                                <form class="user" action="inserttransaksi.php" method="POST">
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
+            <div class="card-body w-75 vh-50 ">
+                <!-- Nested Row within Card Body -->
+
+
+                        <div class="p-2">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">New Data</h1>
+                            </div>
+                            <form class="user" action="inserttransaksi.php" method="POST">
                                 <div class="form-group">
                                     <label>ID Transaksi</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputId"
-                                        placeholder="TRS001" name="txt_id">
+                                        placeholder="ID Transaksi" name="txt_id">
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputTanggal"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputTgl"
                                         placeholder="yyyy-mm-dd" name="txt_tgl">
                                 </div>
                                 <div class="form-group">
                                     <label>ID Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputCust"
-                                        placeholder="CST001" name="txt_idc">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputIdc"
+                                        placeholder="id cust" name="txt_idc">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama</label>
+                                    <label>Nama Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputNama"
                                         placeholder="Nama" name="txt_nama">
                                 </div>
                                 <div class="form-group">
                                     <label>Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPkt"
-                                        placeholder="PKT001" name="txt_idp">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputIdp"
+                                        placeholder="paket" name="txt_idp">
                                 </div>
                                 <div class="form-group">
                                     <label>Qty</label>
@@ -242,83 +242,83 @@ if( isset($_POST['insert']) ){
                                 <div class="form-group">
                                     <label>Bayar</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputBayar"
-                                        placeholder="Bayar" name="txt_bayar">
+                                        placeholder="Byaar" name="txt_bayar">
                                 </div>
                                 <div class="form-group">
-                                    <label>Kembalian</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKembalian"
-                                        placeholder="Kembalian" name="txt_kembali">
+                                    <label>Kembali</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
+                                        placeholder="Kembali" name="txt_kembali">
                                 </div>
-                                    <hr>
-                                    <div class="form-group row" style="position: relative; float: right; ">
-                                        <div class="px-3" style="width: 150px;">
-                                            <button type="submit" name="insert" class="btn btn-primary btn-user btn-block">Save</button>
-                                        </div>
-                                        <div style="width: 125px;">
-                                            <a href="ttransaksi.php" class="btn btn-secondary btn-user btn-block">Back</a>
-                                        </div>
+                                <hr>
+                                <div class="form-group row" style="position: relative; float: right; ">
+                                    <div class="px-3" style="width: 150px;">
+                                        <button type="submit" name="insert" class="btn btn-primary btn-user btn-block">Save</button>
                                     </div>
-                                </form>
-                                
-                            </div>
+                                    <div style="width: 125px;">
+                                        <a href="ttransaksi.php" class="btn btn-secondary btn-user btn-block">Back</a>
+                                    </div>
+                                </div>
+                            </form>
+                            
                         </div>
-                    
+                    </div>
                 
-            </div>
+            
         </div>
-        <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Miracle Bubbles 2022</span>
-                        </div>
+    </div>
+    <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Miracle Bubbles 2022</span>
                     </div>
-                </footer>
-                <!-- End of Footer -->
-    
-            </div>
-            <!-- End of Content Wrapper -->
-    
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
         </div>
-        <!-- End of Page Wrapper -->
-    
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="logout.php">Logout</a>
-                    </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
-       
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
-    
-        <!-- Page level plugins -->
-        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    
-        <!-- Page level custom scripts -->
-        <script src="js/demo/datatables-demo.js"></script>
-    </body>
-    
-    </html>
-    <?php  ?>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+</body>
+
+</html>
+<?php  ?>
