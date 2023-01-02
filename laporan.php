@@ -1,3 +1,7 @@
+<?php
+require ("koneksi.php");
+// $email = $_GET['user_fullname'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
