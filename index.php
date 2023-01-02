@@ -95,7 +95,7 @@ if( isset($_POST['insert']) ){
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa fa-table" aria-hidden="true"></i>
-                    <span>Data Master</span>
+                    <span>Data Laundry</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -103,7 +103,6 @@ if( isset($_POST['insert']) ){
                         <a class="collapse-item" href="tcustomer.php">Customer</a>
                         <a class="collapse-item" href="tpaket.php">Paket</a>
                         <a class="collapse-item" href="ttransaksi.php">Transaksi</a>
-                        <a class="collapse-item" href="tdttransaksi.php">Detail Transaksi</a>
                     </div>
                 </div>
                
