@@ -18,7 +18,7 @@ $query2 = $koneksi->query("SELECT * FROM tb_paket");
 $jml_paket = mysqli_num_rows($query2);
 $query3 = $koneksi->query("SELECT * FROM tb_transaksi");
 $jml_transaksi = mysqli_num_rows($query3);
-$query4 = $koneksi->query("SELECT * FROM user_detail");
+$query4 = $koneksi->query("SELECT * FROM tb_user");
 $jml_user = mysqli_num_rows($query4);
 ?>
 
