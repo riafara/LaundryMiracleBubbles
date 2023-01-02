@@ -69,8 +69,8 @@ while ($row = mysqli_fetch_array($result)){
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div >
+                    <img src="img/logoo.jpg" style="width: 50px">
                 </div>
                 <div class="sidebar-brand-text mx-3"> MIRACLE BUBBLES </div>
             </a>
@@ -81,13 +81,15 @@ while ($row = mysqli_fetch_array($result)){
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">
+                <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <span>MiracleBubbles</span>
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                    <span>Data Laundry</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -95,14 +97,14 @@ while ($row = mysqli_fetch_array($result)){
                         <a class="collapse-item" href="tcustomer.php">Customer</a>
                         <a class="collapse-item" href="tpaket.php">Paket</a>
                         <a class="collapse-item" href="ttransaksi.php">Transaksi</a>
-                        <a class="collapse-item" href="tdttransaksi.php">Detail Transaksi</a>
                     </div>
                 </div>
                
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
-                    <span>Laporan</span></a>
+                <a class="nav-link" href="bar.php">
+                <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Graph</span></a>
             </li>
             
 
@@ -129,19 +131,7 @@ while ($row = mysqli_fetch_array($result)){
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -179,8 +169,7 @@ while ($row = mysqli_fetch_array($result)){
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $sesName; ?></span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <i class="fa fa-user" aria-hidden="true"></i>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
