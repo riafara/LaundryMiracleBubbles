@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 02, 2023 at 01:04 PM
+-- Generation Time: Jan 02, 2023 at 02:13 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laundry`
+-- Database: `laundryy`
 --
 
 -- --------------------------------------------------------
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tb_customer` (
-  `id_customer` varchar(10) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `alamat` varchar(255) NOT NULL,
-  `no_hp` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id_customer` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_customer`
@@ -61,7 +61,7 @@ CREATE TABLE `tb_paket` (
   `paket` varchar(100) NOT NULL,
   `harga_kilo` int NOT NULL,
   `deskripsi` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_paket`
@@ -82,16 +82,16 @@ INSERT INTO `tb_paket` (`id_paket`, `paket`, `harga_kilo`, `deskripsi`) VALUES
 --
 
 CREATE TABLE `tb_transaksi` (
-  `id_transaksi` varchar(10) NOT NULL,
+  `id_transaksi` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal` date NOT NULL,
-  `id_customer` varchar(10) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `id_paket` varchar(10) NOT NULL,
+  `id_customer` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `id_paket` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `qty` int NOT NULL,
   `biaya` int NOT NULL,
   `bayar` int NOT NULL,
   `kembalian` int NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_transaksi`
@@ -168,6 +168,16 @@ ALTER TABLE `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tb_transaksi`
+--
+ALTER TABLE `tb_transaksi`
+  ADD CONSTRAINT `tb_transaksi_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `tb_customer` (`id_customer`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
