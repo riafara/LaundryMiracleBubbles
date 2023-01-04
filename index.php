@@ -259,8 +259,8 @@ if( isset($_POST['insert']) ){
                                                 <a href="tpaket.php">Layanan Laundry</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_paket,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto">
-                                        <i class="fa fa-tasks fa-2x text-gray-300" aria-hidden="true"></i>
+                                        <div class="col-auto"><img src="img/layanan.jpg" style="width: 100px">
+                                        <i class="" aria-hidden="true"></i>
                                           
                                         </div>
                                     </div>
