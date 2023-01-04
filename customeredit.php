@@ -18,20 +18,20 @@ if( isset($_POST['update']) ){
     $alamat   = $_POST['txt_alamat'];
     $hp   = $_POST['txt_hp'];
 
-    $query = "UPDATE tb_customer SET nama='$nama', alamat='$alamat', no_hp='$hp' WHERE id_customer='$cust'";
+    $query = "UPDATE tb_customer SET nama_customer='$nama', alamat='$alamat', nohp='$hp' WHERE kode_customer='$cust'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: tcustomer.php');
 }
-$id = $_GET['id_customer'];
-$query = "SELECT * FROM tb_customer WHERE id_customer='$id'";
+$id = $_GET['kode_customer'];
+$query = "SELECT * FROM tb_customer WHERE kode_customer='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
-    $id   = $row['id_customer'];
-    $nama = $row['nama'];
+    $id   = $row['kode_customer'];
+    $nama = $row['nama_customer'];
     $alamat= $row['alamat'];
-    $hp   = $row['no_hp'];
+    $hp   = $row['nohp'];
 
 ?>
 
@@ -201,16 +201,16 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="txt_id" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="txt_nama" value="<?php echo $nama; ?>">
+                                    <label>Nama Customer</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNama" name="txt_nama" value="<?php echo $nama; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="txt_alamat" value="<?php echo $alamat; ?>">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputAlamat" name="txt_alamat" value="<?php echo $alamat; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>No HP</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="txt_hp" value="<?php echo $hp; ?>">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNoHP" name="txt_hp" value="<?php echo $hp; ?>">
                                 </div>
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
