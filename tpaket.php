@@ -184,10 +184,9 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID Paket</th>
-                                            <th>Paket</th>
-                                            <th>Harga/Kg</th>
-                                            <th>Deskripsi</th>
+                                            <th>Kode Paket</th>
+                                            <th>Nama Paket</th>
+                                            <th>Harga Paket</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -202,22 +201,20 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id_paket'];
-                                                $paket = $row['paket'];
-                                                $harga = $row['harga_kilo'];
-                                                $des = $row['deskripsi'];
+                                                $userId = $row['kode_paket'];
+                                                $paket = $row['nama_paket'];
+                                                $harga = $row['harga_paket'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
                                             <td><?php echo $userId; ?></td>
                                             <td><?php echo $paket; ?></td>
                                             <td><?php echo $harga; ?></td>
-                                            <td><?php echo $des; ?></td>
                                             <td>
-                                            <a href="editpaket.php?id_paket=<?php echo $row['id_paket']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="editpaket.php?kode_paket=<?php echo $row['kode_paket']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('hapuspaket.php?&id_paket=<?php echo $row['id_paket']; ?>');">
+                                            onClick="confirmModal('hapuspaket.php?&kode_paket=<?php echo $row['kode_paket']; ?>');">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>

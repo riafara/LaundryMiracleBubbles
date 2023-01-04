@@ -14,10 +14,9 @@ require ("koneksi.php");
         <table border='2' style="text-align:center">
             <tr>
                 <td>No</td>
-                <td>ID Paket</td>
-                <td>Paket</td>
-                <td>Harga/Kg</td>
-                <td>Deskripsi</td>
+                <td>Kode Paket</td>
+                <td>Nama Paket</td>
+                <td>Harga Paket</td>
                 
                 <td colspan="2"></td>
             </tr>
@@ -29,10 +28,10 @@ require ("koneksi.php");
             
 
             while ($row = mysqli_fetch_array($result)){
-                $pkt   = $row['id_paket'];
-                $paket = $row['paket'];
-                $harga = $row['harga_kilo'];
-                $des   = $row['deskripsi'];
+                $pkt   = $row['kode_paket'];
+                $paket = $row['nama_paket'];
+                $harga = $row['harga_paket'];
+                
                 
             ?>
             <tr>
@@ -40,11 +39,11 @@ require ("koneksi.php");
                 <td><?php echo $pkt; ?></td>
                 <td><?php echo $paket; ?></td>
                 <td><?php echo $harga; ?></td>
-                <td><?php echo $des; ?></td>
+        
                 
                 <td>
-                <a href="editpaket.php?id_paket=<?php echo $row['id_paket']; ?>">edit</a>
-                <a href="hapuspaket.php?id_paket=<?php echo $row['id_paket']; ?>">hapus</a>
+                <a href="editpaket.php?kode_paket=<?php echo $row['kode_paket']; ?>">edit</a>
+                <a href="hapuspaket.php?kode_paket=<?php echo $row['kode_paket']; ?>">hapus</a>
 
             </td>
                 
