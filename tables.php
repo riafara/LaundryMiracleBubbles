@@ -168,9 +168,6 @@ $sesLvl = $_SESSION['level'];
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data User</h1>
-
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -182,9 +179,9 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Id</th>
+                                            <th>Kode User</th>
                                             <th>Email</th>
-                                            <th>Nama</th>
+                                            <th>Username</th>
                                             <th>Level</th>
                                             <th>Aksi</th>
                                         </tr>

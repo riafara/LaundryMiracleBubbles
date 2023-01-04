@@ -16,22 +16,20 @@ if( isset($_POST['update']) ){
     $userId  = $_POST['txt_id'];
     $paket   = $_POST['txt_paket'];
     $harga   = $_POST['txt_harga'];
-    $des     = $_POST['txt_des'];
 
-    $query = "UPDATE tb_paket SET paket='$paket', harga_kilo='$harga', deskripsi='$des' WHERE id_paket='$userId'";
+    $query = "UPDATE tb_paket SET nama_paket='$paket', harga_paket='$harga' WHERE kode_paket='$userId'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: tpaket.php');
 }
-$id = $_GET['id_paket'];
-$query = "SELECT * FROM tb_paket WHERE id_paket='$id'";
+$id = $_GET['kode_paket'];
+$query = "SELECT * FROM tb_paket WHERE kode_paket='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
-    $id = $row['id_paket'];
-    $paket = $row['paket'];
-    $harga = $row['harga_kilo'];
-    $des = $row['deskripsi'];
+    $id = $row['kode_paket'];
+    $paket = $row['nama_paket'];
+    $harga = $row['harga_paket'];
 
 ?>
 
@@ -201,16 +199,12 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="txt_id" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="txt_paket" value="<?php echo $paket; ?>" >
+                                    <label>Nama Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNama" name="txt_paket" value="<?php echo $paket; ?>" >
                                 </div>
                                 <div class="form-group">
-                                    <label>Harga</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="txt_harga" value="<?php echo $harga; ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label>Deskripsi</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="txt_des" value="<?php echo $des; ?>">
+                                    <label>Harga Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputHarga" name="txt_harga" value="<?php echo $harga; ?>">
                                 </div>
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">

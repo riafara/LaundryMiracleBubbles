@@ -16,9 +16,8 @@ if( isset($_POST['insert']) ){
     $userId  = $_POST['txt_id'];
     $paket   = $_POST['txt_paket'];
     $harga   = $_POST['txt_harga'];
-    $des     = $_POST['txt_des'];
 
-    $query = "INSERT INTO tb_paket (id_paket, paket, harga_kilo, deskripsi) VALUES ('$userId', '$paket', '$harga', '$des')";
+    $query = "INSERT INTO tb_paket (kode_paket, nama_paket, harga_paket) VALUES ('$userId', '$paket', '$harga')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: tpaket.php');
@@ -189,24 +188,19 @@ if( isset($_POST['insert']) ){
                             </div>
                             <form class="user" action="insertpaket.php" method="POST">
                                 <div class="form-group">
-                                    <label>ID Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputId"
-                                        placeholder="ID Paket" name="txt_id">
+                                    <label>Kode Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKode"
+                                        placeholder="" name="txt_id">
                                 </div>
                                 <div class="form-group">
-                                    <label>Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPaket"
-                                        placeholder="Nama Paket" name="txt_paket">
+                                    <label>Nama Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNama"
+                                        placeholder="" name="txt_paket">
                                 </div>
                                 <div class="form-group">
                                     <label>Harga</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputHarga"
-                                        placeholder="Harga per Paket" name="txt_harga">
-                                </div>
-                                <div class="form-group">
-                                    <label>Deskripsi</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputDeskripsi"
-                                        placeholder="Deskripsi Paket" name="txt_des">
+                                        placeholder="Harga Paket" name="txt_harga">
                                 </div>
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
