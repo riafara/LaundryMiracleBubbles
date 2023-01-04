@@ -18,7 +18,7 @@ if( isset($_POST['insert']) ){
     $alamat = $_POST['txt_alamat'];
     $hp     = $_POST['txt_hp'];
 
-    $query = "INSERT INTO tb_customer (id_customer, nama, alamat, no_hp) VALUES ('$cust', '$nama', '$alamat', '$hp')";
+    $query = "INSERT INTO tb_customer (kode_customer, nama_customer, alamat, nohp) VALUES ('$cust', '$nama', '$alamat', '$hp')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: tcustomer.php');
@@ -189,12 +189,12 @@ if( isset($_POST['insert']) ){
                             </div>
                             <form class="user" action="insert.php" method="POST">
                                 <div class="form-group">
-                                    <label>ID Customer</label>
+                                    <label>Kode Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputId"
-                                        placeholder="ID Customer" name="txt_id">
+                                        placeholder="Kode Customer" name="txt_id">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama</label>
+                                    <label>Nama Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputNama"
                                         placeholder="Nama" name="txt_nama">
                                 </div>

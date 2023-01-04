@@ -168,13 +168,16 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
+                    
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <div style="width: 150px;" >
-                            <a href="insert.php" class="btn btn-primary btn-user btn-block">Add New Data</a>
+                    <div class="card-header py-3">
+                            <h5 class="m-0 font-weight-bold text-primary">Data Table Customer</h5>
+                        </div>
+                    <div class="card-header py-3">
+                            <div style="width: 180px;" >
+                            <a href="insert.php" class="btn btn-primary btn-user btn-block">Add Data Customer</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -183,8 +186,8 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID Customer</th>
-                                            <th>Nama</th>
+                                            <th>Kode Customer</th>
+                                            <th>Nama Customer</th>
                                             <th>Alamat</th>
                                             <th>No Hp</th>
                                             <th>Aksi</th>
@@ -201,10 +204,10 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id_customer'];
-                                                $nama = $row['nama'];
+                                                $userId = $row['kode_customer'];
+                                                $nama = $row['nama_customer'];
                                                 $alamat = $row['alamat'];
-                                                $hp = $row['no_hp'];
+                                                $hp = $row['nohp'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
@@ -213,10 +216,10 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $alamat; ?></td>
                                             <td><?php echo $hp; ?></td>
                                             <td>
-                                            <a href="customeredit.php?id_customer=<?php echo $row['id_customer']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="customeredit.php?kode_customer=<?php echo $row['kode_customer']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('customerhapus.php?&id_customer=<?php echo $row['id_customer']; ?>');">
+                                            onClick="confirmModal('customerhapus.php?&kode_customer=<?php echo $row['kode_customer']; ?>');">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>
