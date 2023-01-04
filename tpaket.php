@@ -61,37 +61,37 @@ $sesLvl = $_SESSION['level'];
                 <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Home</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="tables.php">
                 <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Users</span></a>
+                    <span>User</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="tpaket.php">
                 <i class="fas fa-camera-retro"></i>
                     <span>Paket</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="tcustomer.php">
                 <i class="fa fa-users" aria-hidden="true"></i>
-                    <span>Konsumen</span></a>
+                    <span>Customer</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="ttransaksi.php">
                 <i class="far fa-money-bill-alt" aria-hidden="true"></i>
                     <span>Transaksi</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="cetak.php">
                 <i class="far fa-file-alt"></i>
-                    <span>Laporan</span></a>
+                    <span>Report</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="bar.php">
                 <i class="fas fa-fw fa-chart-line"></i>
@@ -183,16 +183,18 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Paket</h1>
+                    
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                     <div class="card-header py-3">
+                            <h5 class="m-0 font-weight-bold text-primary">Data Table Paket</h5>
+                        </div>
+                    <div class="card-header py-3">
                             <div style="width: 150px;" >
-                            <a href="insertpaket.php" class="btn btn-primary btn-user btn-block">Add New Data</a>
+                            <a href="insertpaket.php" class="btn btn-primary btn-user btn-block">Add Data Paket</a>
                             </div>
                         </div>
-                       
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

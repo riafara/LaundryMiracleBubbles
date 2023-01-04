@@ -61,43 +61,43 @@ $sesLvl = $_SESSION['level'];
                 <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Home</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="tables.php">
                 <i class="fa fa-user" aria-hidden="true"></i>
                     <span>User</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="tpaket.php">
                 <i class="fas fa-camera-retro"></i>
                     <span>Paket</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="tcustomer.php">
                 <i class="fa fa-users" aria-hidden="true"></i>
                     <span>Customer</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="ttransaksi.php">
                 <i class="far fa-money-bill-alt" aria-hidden="true"></i>
                     <span>Transaksi</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="cetak.php">
                 <i class="far fa-file-alt"></i>
                     <span>Report</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="bar.php">
                 <i class="fas fa-fw fa-chart-line"></i>
                     <span>Graph</span></a>
             </li>
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-0">
             
 
 
@@ -186,7 +186,7 @@ $sesLvl = $_SESSION['level'];
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Table User</h6>
+                            <h5 class="m-0 font-weight-bold text-primary">Data Table User</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

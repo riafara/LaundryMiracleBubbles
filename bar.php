@@ -76,36 +76,49 @@ $jml_user = mysqli_num_rows($query4);
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+<!-- Nav Item - Dashboard -->
+<li class="nav-item active">
                 <a class="nav-link" href="index.php">
                 <i class="fa fa-home" aria-hidden="true"></i>
-                    <span>Dashboard</span></a>
+                    <span>Home</span></a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fa fa-table" aria-hidden="true"></i>
-                    <span>Data Laundry</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="tables.php">User</a>
-                        <a class="collapse-item" href="tcustomer.php">Customer</a>
-                        <a class="collapse-item" href="tpaket.php">Paket</a>
-                        <a class="collapse-item" href="ttransaksi.php">Transaksi</a>
-                    </div>
-                </div>
-               
-            <!-- Nav Item - Dashboard -->
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="tables.php">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>User</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="tpaket.php">
+                <i class="fas fa-camera-retro"></i>
+                    <span>Paket</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="tcustomer.php">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                    <span>Customer</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="ttransaksi.php">
+                <i class="far fa-money-bill-alt" aria-hidden="true"></i>
+                    <span>Transaksi</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="cetak.php">
+                <i class="far fa-file-alt"></i>
+                    <span>Report</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
             <li class="nav-item active">
                 <a class="nav-link" href="bar.php">
                 <i class="fas fa-fw fa-chart-line"></i>
                     <span>Graph</span></a>
             </li>
-            
-
+            <hr class="sidebar-divider my-0">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

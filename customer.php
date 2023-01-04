@@ -14,8 +14,8 @@ require ("koneksi.php");
         <table border='2' style="text-align:center">
             <tr>
                 <td>NO</td>
-                <td>ID Customer</td>
-                <td>Nama</td>
+                <td>Kode Customer</td>
+                <td>Nama Customer</td>
                 <td>Alamat</td>
                 <td>No Hp</td>
                 
@@ -29,10 +29,10 @@ require ("koneksi.php");
             
 
             while ($row = mysqli_fetch_array($result)){
-                $cust   = $row['id_customer'];
-                $nama = $row['nama'];
+                $cust   = $row['kode_customer'];
+                $nama = $row['nama_customer'];
                 $alamat= $row['alamat'];
-                $hp   = $row['no_hp'];
+                $hp   = $row['nohp'];
                 
             ?>
             <tr>
@@ -43,8 +43,8 @@ require ("koneksi.php");
                 <td><?php echo $hp; ?></td>
                 
                 <td>
-                <a href="customeredit.php?id_customer=<?php echo $row['id_customer']; ?>">edit</a>
-                <a href="customerhapus.php?id_customer=<?php echo $row['id_customer']; ?>">hapus</a>
+                <a href="customeredit.php?kode_customer=<?php echo $row['kode_customer']; ?>">edit</a>
+                <a href="customerhapus.php?kode_customer=<?php echo $row['kode_customer']; ?>">hapus</a>
 
             </td>
                 
