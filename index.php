@@ -241,8 +241,8 @@ if( isset($_POST['insert']) ){
                                                 <a href="tcustomer.php">Customer</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_customer,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto">
-                                        <i class="fa fa-users fa-2x text-gray-300" aria-hidden="true"></i>
+                                        <div class="col-auto"><img src="img/cust.jpg" style="width: 100px">
+                                        <i class="" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -343,7 +343,7 @@ if( isset($_POST['insert']) ){
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
+                                    <div class="chart-pie pt-8 pb-4">
                                         <canvas id="myPieChart"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
@@ -353,9 +353,7 @@ if( isset($_POST['insert']) ){
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-success"></i> Social
                                         </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
+                                        
                                     </div>
                                 </div>
                             </div>
