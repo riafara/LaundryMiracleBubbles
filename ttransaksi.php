@@ -181,14 +181,14 @@ $sesLvl = $_SESSION['level'];
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Tabel Transaksi</h1>
-
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <div style="width: 150px;" >
-                            <a href="inserttransaksi.php" class="btn btn-primary btn-user btn-block">Add New Data</a>
+                    <div class="card-header py-3">
+                            <h5 class="m-0 font-weight-bold text-primary">Data Table Transaksi</h5>
+                        </div>
+                    <div class="card-header py-3">
+                            <div style="width: 180px;" >
+                            <a href="insert.php" class="btn btn-primary btn-user btn-block">Add Data Transaksi</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -197,15 +197,15 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal</th>
-                                            <th>ID Transaksi</th>
-                                            <th>ID Customer</th>
-                                            <th>Nama</th>
+                                            <th>Tanggal Masuk</th>
+                                            <th>No Transaksi</th>
+                                            <th>Nama Customer</th>
                                             <th>Paket</th>
-                                            <th>Qty</th>
-                                            <th>Harga</th>
-                                            <th>Bayar</th>
-                                            <th>Kembali</th>
+                                            <th>Berat</th>
+                                            <th>Harga/KG</th>
+                                            <th>Harga Total</th>
+                                            <th>Tanggal Ambil</th>
+                                            <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
