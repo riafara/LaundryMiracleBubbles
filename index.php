@@ -94,7 +94,7 @@ if( isset($_POST['insert']) ){
             <li class="nav-item active">
                 <a class="nav-link" href="tables.php">
                 <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Users</span></a>
+                    <span>User</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item active">
@@ -106,7 +106,7 @@ if( isset($_POST['insert']) ){
             <li class="nav-item active">
                 <a class="nav-link" href="tcustomer.php">
                 <i class="fa fa-users" aria-hidden="true"></i>
-                    <span>Konsumen</span></a>
+                    <span>Customer</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item active">
@@ -118,7 +118,7 @@ if( isset($_POST['insert']) ){
             <li class="nav-item active">
                 <a class="nav-link" href="cetak.php">
                 <i class="far fa-file-alt"></i>
-                    <span>Laporan</span></a>
+                    <span>Report</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item active">
