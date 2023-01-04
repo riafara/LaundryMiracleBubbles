@@ -219,12 +219,12 @@ if( isset($_POST['insert']) ){
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 
                                                 <a href="tables.php">Staff</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_user,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto">
-                                        <i class="fa fa-user fa-2x text-gray-300" aria-hidden="true"></i>
+                                        <div class="col-auto"><img src="img/hijab_work.jpg" style="width: 100px">
+                                        <i class="" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -325,7 +325,7 @@ if( isset($_POST['insert']) ){
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Status Laundry</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -359,6 +359,7 @@ if( isset($_POST['insert']) ){
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 </div>
                     
@@ -372,7 +373,7 @@ if( isset($_POST['insert']) ){
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Mircale Bubbles 2022</span>
+                        <span>Copyright &copy; Mircale Bubbles 2023</span>
                     </div>
                 </div>
             </footer>
