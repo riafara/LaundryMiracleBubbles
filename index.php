@@ -88,30 +88,45 @@ if( isset($_POST['insert']) ){
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">
                 <i class="fa fa-home" aria-hidden="true"></i>
-                    <span>Dashboard</span></a>
+                    <span>Home</span></a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fa fa-table" aria-hidden="true"></i>
-                    <span>Data Master</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="tables.php">User</a>
-                        <a class="collapse-item" href="tcustomer.php">Customer</a>
-                        <a class="collapse-item" href="tpaket.php">Paket</a>
-                        <a class="collapse-item" href="ttransaksi.php">Transaksi</a>
-                    </div>
-                </div>
-               
-            <!-- Nav Item - Dashboard -->
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="tables.php">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Users</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="tpaket.php">
+                <i class="fas fa-camera-retro"></i>
+                    <span>Paket</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="tcustomer.php">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                    <span>Konsumen</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="ttransaksi.php">
+                <i class="far fa-money-bill-alt" aria-hidden="true"></i>
+                    <span>Transaksi</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="cetak.php">
+                <i class="far fa-file-alt"></i>
+                    <span>Laporan</span></a>
+            </li>
+            <hr class="sidebar-divider">
             <li class="nav-item active">
                 <a class="nav-link" href="bar.php">
                 <i class="fas fa-fw fa-chart-line"></i>
                     <span>Graph</span></a>
             </li>
+            <hr class="sidebar-divider">
             
 
 
@@ -196,13 +211,7 @@ if( isset($_POST['insert']) ){
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="cetak.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-
+                    
                     <!-- Content Row -->
                     <div class="row">
                     <div class="col-xl-3 col-md-6 mb-4">
@@ -277,75 +286,82 @@ if( isset($_POST['insert']) ){
                                 </div>
                             </div>
                         </div>
+                        <!-- Content Row -->
 
-                    <!-- Content Row -->
-                    <div class="container">
-            <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
-                <div class="card-body w-75 vh-50 ">
-                    <!-- Nested Row within Card Body -->
-    
-    
-                    <div class="p-2">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">New Data</h1>
-                            </div>
-                            <form class="user" action="inserttransaksi.php" method="POST">
-                                <div class="form-group">
-                                    <label>ID Transaksi</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputId"
-                                        placeholder="ID Transaksi" name="txt_id">
-                                </div>
-                                <div class="form-group">
-                                    <label>Tanggal</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputTgl"
-                                        placeholder="yyyy-mm-dd" name="txt_tgl">
-                                </div>
-                                <div class="form-group">
-                                    <label>ID Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputIdc"
-                                        placeholder="id cust" name="txt_idc">
-                                </div>
-                                <div class="form-group">
-                                    <label>Nama Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputNama"
-                                        placeholder="Nama" name="txt_nama">
-                                </div>
-                                <div class="form-group">
-                                    <label>Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputIdp"
-                                        placeholder="paket" name="txt_idp">
-                                </div>
-                                <div class="form-group">
-                                    <label>Qty</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputQty"
-                                        placeholder="Qty" name="txt_qty">
-                                </div>
-                                <div class="form-group">
-                                    <label>Biaya</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputBiaya"
-                                        placeholder="Biaya" name="txt_biaya">
-                                </div>
-                                <div class="form-group">
-                                    <label>Bayar</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputBayar"
-                                        placeholder="Byaar" name="txt_bayar">
-                                </div>
-                                <div class="form-group">
-                                    <label>Kembali</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
-                                        placeholder="Kembali" name="txt_kembali">
-                                </div>
-                                <hr>
-                                <div class="form-group row" style="position: relative; float: right; ">
-                                    <div class="px-3" style="width: 150px;">
-                                        <button type="submit" name="insert" class="btn btn-primary btn-user btn-block">Save</button>
+                        <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-md-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Transaksi</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="ttransaksi.php">See More</a>
+                                           
+                                        </div>
                                     </div>
-                                    
                                 </div>
-                            </form>
-                            
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Referral
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+</div>
+                    
                 
             </div>
         </div>
