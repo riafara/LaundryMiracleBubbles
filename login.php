@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
 
             <div class="container">
 
-                <div class="card o-hidden border-0 shadow-lg" style="margin-top: 50px;">
+                <div class="card o-hidden border-0 shadow-lg" style="margin-top: 125px;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -120,7 +120,7 @@ if (isset($_POST['submit'])) {
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                    <a class="small" href="password.php">Forgot Password?</a> <br>
+                                    
                                     <a class="small" href="register.php">Create an Account!</a>
                                     </div>
                                 </div>
