@@ -39,7 +39,7 @@ if( isset($_POST['register']) ){
 
     <div class="container">
 
-        <div class="card o-hidden border-0 shadow-lg" style="margin-top: 125px;">
+        <div class="card o-hidden border-0 shadow-lg" style="margin-top: 50px;">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
