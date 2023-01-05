@@ -226,8 +226,8 @@ $jml_user = mysqli_num_rows($query4);
                         var jual = [];
 
                         for (var i in data){
-                        id.push(data[i].tanggal);
-                        jual.push(data[i].biaya);
+                        id.push(data[i].tgl_masuk);
+                        jual.push(data[i].harga_total);
                         }
                         var chartdata = {
                             labels : id,
