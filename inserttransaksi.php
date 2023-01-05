@@ -211,11 +211,20 @@ if( isset($_POST['insert']) ){
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">New Data</h1>
                             </div>
+                            <?php
+                            $auto = mysqli_query($koneksi, "SELECT max(kode_transaksi) as max_code FROM tb_transaksi");
+                            $data = mysqli_fetch_array($auto);
+                            $code = $data['max_code'];
+                            $urutan = (int)substr($code, 1, 3);
+                            $urutan++;
+                            $huruf = "TRS";
+                            $kd_transaksi = $huruf.sprintf("%03s", $urutan);
+                            ?>
                             <form class="user" action="inserttransaksi.php" method="POST">
                                 <div class="form-group">
                                     <label>ID Transaksi</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputId"
-                                        placeholder="" name="txt_id">
+                                    <input type="text" value="<?php echo $kd_transaksi?>" class="form-control form-control-user" id="exampleInputId"
+                                        name="txt_id" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal</label>

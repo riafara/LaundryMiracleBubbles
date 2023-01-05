@@ -199,18 +199,27 @@ if( isset($_POST['insert']) ){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Add New Paket</h1>
+                                <h1 class="h4 text-gray-900 mb-4">New Data</h1>
                             </div>
+                            <?php
+                            $auto = mysqli_query($koneksi, "SELECT max(kode_paket) as max_code FROM tb_paket");
+                            $data = mysqli_fetch_array($auto);
+                            $code = $data['max_code'];
+                            $urutan = (int) substr($code, 3, 3);
+                            $urutan++;
+                            $huruf = "PKT";
+                            $kd_pkt = $huruf . sprintf("%03s", $urutan);
+                            ?>
                             <form class="user" action="insertpaket.php" method="POST">
                                 <div class="form-group">
                                     <label>Kode Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKode"
-                                        placeholder="" name="txt_id">
+                                    <input type="text" value="<?php echo $kd_pkt?>" class="form-control form-control-user" id="exampleInputKode"
+                                         name="txt_id" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Paket</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputNama"
-                                        placeholder="" name="txt_paket">
+                                        placeholder="Nama Paket" name="txt_paket">
                                 </div>
                                 <div class="form-group">
                                     <label>Harga</label>

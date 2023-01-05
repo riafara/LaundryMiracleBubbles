@@ -203,11 +203,20 @@ if( isset($_POST['insert']) ){
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">New Data</h1>
                             </div>
+                            <?php
+                            $auto = mysqli_query($koneksi, "SELECT max(kode_customer) as max_code FROM tb_customer");
+                            $data = mysqli_fetch_array($auto);
+                            $code = $data['max_code'];
+                            $urutan = (int) substr($code, 3, 3);
+                            $urutan++;
+                            $huruf = "CST";
+                            $kd_cust = $huruf . sprintf("%03s", $urutan);
+                            ?>
                             <form class="user" action="insert.php" method="POST">
                                 <div class="form-group">
                                     <label>Kode Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputId"
-                                        placeholder="Kode Customer" name="txt_id">
+                                    <input type="text" value="<?php echo $kd_cust?>" class="form-control form-control-user" id="exampleInputId"
+                                         name="txt_id" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Customer</label>
