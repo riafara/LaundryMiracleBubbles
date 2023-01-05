@@ -17,14 +17,13 @@ if( isset($_POST['insert']) ){
     $transaksi  = $_POST['txt_id'];
     $nama       = $_POST['txt_cust'];
     $paket      = $_POST['txt_paket'];
-    $qty        = $_POST['txt_qty'];
+    $qty = $_POST['txt_qty'];
     $harga      = $_POST['txt_harga'];
     $total      = $_POST['txt_t'];
     $ambil      = $_POST['txt_a'];
     $status     = $_POST['txt_s'];
     $cust       = $_POST['txt_kc'];
     $pkt        = $_POST['txt_kp'];
-
 
     $query = "INSERT INTO tb_transaksi (tgl_masuk, kode_transaksi, nama_customer, nama_paket, Qty, harga_paket, harga_total, tgl_ambil, status, kode_customer, kode_paket) VALUES ('$tgl', '$transaksi', '$nama', '$paket', '$qty', '$harga', '$total', '$ambil', '$status', '$cust', '$pkt')";
     echo $query;
@@ -233,48 +232,48 @@ if( isset($_POST['insert']) ){
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputIdc"
-                                        placeholder="" name="txt_cust">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputCust"
+                                        placeholder="Nama Customer" name="txt_cust">
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputNama"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputPaket"
                                         placeholder="" name="txt_paket">
                                 </div>
                                
                                 <div class="form-group">
                                     <label>Qty</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputIdp"
-                                        placeholder="" name="txt_qty ">
+                                    <input type="number" class="form-control form-control-user" id="exampleInputQty"
+                                        placeholder="" name="txt_qty">
                                 </div>
                                 <div class="form-group">
                                     <label>Harga/Kg</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputQty"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputHarga"
                                         placeholder="" name="txt_harga">
                                 </div>
                                 <div class="form-group">
                                     <label>Total</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputBiaya"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputTotal"
                                         placeholder="" name="txt_t">
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Ambil</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputBayar"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputAmbil"
                                         placeholder="" name="txt_a">
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputStatus"
                                         placeholder="" name="txt_s">
                                 </div>
                                 <div class="form-group">
                                     <label>Kode Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKodeCustomer"
                                         placeholder="" name="txt_kc">
                                 </div>
                                 <div class="form-group">
                                     <label>Kode Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKodePaket"
                                         placeholder="" name="txt_kp">
                                 </div>
                                 <hr>
