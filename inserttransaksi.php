@@ -211,10 +211,14 @@ if( isset($_POST['insert']) ){
                                 <h1 class="h4 text-gray-900 mb-4">New Data</h1>
                             </div>
                             <?php
+                           
                             $auto = mysqli_query($koneksi, "SELECT max(kode_transaksi) as max_code FROM tb_transaksi");
                             $data = mysqli_fetch_array($auto);
                             $code = $data['max_code'];
-                            $urutan = (int)substr($code, 1, 3);
+                            
+                            
+                            $urutan = (int)substr((string) $code, 1, 3);
+                          
                             $urutan++;
                             $huruf = "T";
                             $kd_transaksi = $huruf.sprintf("%03s", $urutan);
