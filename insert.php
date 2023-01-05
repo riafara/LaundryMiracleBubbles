@@ -207,9 +207,9 @@ if( isset($_POST['insert']) ){
                             $auto = mysqli_query($koneksi, "SELECT max(kode_customer) as max_code FROM tb_customer");
                             $data = mysqli_fetch_array($auto);
                             $code = $data['max_code'];
-                            $urutan = (int) substr($code, 3, 3);
+                            $urutan = (int) substr($code, 1, 3);
                             $urutan++;
-                            $huruf = "CST";
+                            $huruf = "C";
                             $kd_cust = $huruf . sprintf("%03s", $urutan);
                             ?>
                             <form class="user" action="insert.php" method="POST">

@@ -205,9 +205,9 @@ if( isset($_POST['insert']) ){
                             $auto = mysqli_query($koneksi, "SELECT max(kode_paket) as max_code FROM tb_paket");
                             $data = mysqli_fetch_array($auto);
                             $code = $data['max_code'];
-                            $urutan = (int) substr($code, 3, 3);
+                            $urutan = (int) substr($code, 1, 3);
                             $urutan++;
-                            $huruf = "PKT";
+                            $huruf = "P";
                             $kd_pkt = $huruf . sprintf("%03s", $urutan);
                             ?>
                             <form class="user" action="insertpaket.php" method="POST">

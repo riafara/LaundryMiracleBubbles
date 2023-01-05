@@ -214,9 +214,9 @@ if( isset($_POST['insert']) ){
                             $auto = mysqli_query($koneksi, "SELECT max(kode_transaksi) as max_code FROM tb_transaksi");
                             $data = mysqli_fetch_array($auto);
                             $code = $data['max_code'];
-                            $urutan = (int)substr($code, 3, 3);
+                            $urutan = (int)substr($code, 1, 3);
                             $urutan++;
-                            $huruf = "TRS";
+                            $huruf = "T";
                             $kd_transaksi = $huruf.sprintf("%03s", $urutan);
                             ?>
                             <form class="user" action="inserttransaksi.php" method="POST">

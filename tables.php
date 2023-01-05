@@ -194,7 +194,6 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Kode User</th>
                                             <th>Email</th>
                                             <th>Username</th>
                                             <th>Level</th>
@@ -219,7 +218,7 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $userId; ?></td>
+                                           
                                             <td><?php echo $userMail; ?></td>
                                             <td><?php echo $userName; ?></td>
                                             <td><?php echo $userLevel; ?></td>
