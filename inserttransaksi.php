@@ -17,7 +17,7 @@ if( isset($_POST['insert']) ){
     $transaksi  = $_POST['txt_id'];
     $nama       = $_POST['txt_cust'];
     $paket      = $_POST['txt_paket'];
-    $qty = $_POST['txt_qty'];
+    $qty        = $_POST['txt_qty'];
     $harga      = $_POST['txt_harga'];
     $total      = $_POST['txt_t'];
     $ambil      = $_POST['txt_a'];
