@@ -13,17 +13,20 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['insert']) ){
-    $transaksi = $_POST['txt_id'];
-    $tgl = $_POST['txt_tgl'];
-    $cust = $_POST['txt_idc'];
-    $nama = $_POST['txt_nama'];
-    $pkt = $_POST['txt_idp'];
-    $qty = $_POST['txt_qty'];
-    $biaya = $_POST['txt_biaya'];
-    $bayar = $_POST['txt_bayar'];
-    $kembali = $_POST['txt_kembali'];
+    $tgl        = $_POST['txt_tgl'];
+    $transaksi  = $_POST['txt_id'];
+    $nama       = $_POST['txt_cust'];
+    $paket      = $_POST['txt_paket'];
+    $qty        = $_POST['txt_qty'];
+    $harga      = $_POST['txt_harga'];
+    $total      = $_POST['txt_t'];
+    $ambil      = $_POST['txt_a'];
+    $status     = $_POST['txt_s'];
+    $cust       = $_POST['txt_kc'];
+    $pkt        = $_POST['txt_kp'];
 
-    $query = "INSERT INTO tb_transaksi (id_transaksi, tanggal, id_customer, nama, id_paket, qty, biaya, bayar, kembalian) VALUES ('$transaksi', '$tgl', '$cust', '$nama', '$pkt', '$qty', '$biaya', '$bayar', '$kembali')";
+
+    $query = "INSERT INTO tb_transaksi (tgl_masuk, kode_transaksi, nama_customer, nama_paket, Qty, harga_paket, harga_total, tgl_ambil, status, kode_customer, kode_paket) VALUES ('$tgl', '$transaksi', '$nama', '$paket', '$qty', '$harga', '$total', '$ambil', '$status', '$cust', '$pkt')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');

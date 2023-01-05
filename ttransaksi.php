@@ -188,7 +188,7 @@ $sesLvl = $_SESSION['level'];
                         </div>
                     <div class="card-header py-3">
                             <div style="width: 180px;" >
-                            <a href="insert.php" class="btn btn-primary btn-user btn-block">Add Data Transaksi</a>
+                            <a href="inserttransaksi.php" class="btn btn-primary btn-user btn-block">Add Data Transaksi</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -197,14 +197,13 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal Masuk</th>
-                                            <th>No Transaksi</th>
-                                            <th>Nama Customer</th>
+                                            <th>Tgl. Transaksi</th>
+                                            <th>Customer</th>
                                             <th>Paket</th>
                                             <th>Berat</th>
                                             <th>Harga/KG</th>
-                                            <th>Harga Total</th>
-                                            <th>Tanggal Ambil</th>
+                                            <th>Total</th>
+                                            <th>Tgl. Ambil</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -221,32 +220,35 @@ $sesLvl = $_SESSION['level'];
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
                                                
-                                                $tgl     = $row['tanggal'];
-                                                $id      = $row['id_transaksi'];
-                                                $cust    = $row['id_customer'];
-                                                $nama    = $row['nama'];
-                                                $paket   = $row['id_paket'];
-                                                $qty     = $row['qty'];
-                                                $harga   = $row['biaya'];
-                                                $bayar   = $row['bayar'];
-                                                $kembali = $row['kembalian'];
+                                                $tgl     = $row['tgl_masuk'];
+                                                $transaksi = $row['kode_transaksi'];
+                                                $nama    = $row['nama_customer'];
+                                                $paket   = $row['nama_paket'];
+                                                $qty   = $row['Qty'];
+                                                $harga    = $row['harga_paket'];
+                                                $total   = $row['harga_total'];
+                                                $ambil   = $row['tgl_ambil'];
+                                                $status = $row['status'];
+                                                $cust = $row['kode_customer'];
+                                                $pkt = $row['kode_paket'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
                                             <td><?php echo $tgl; ?></td>
-                                            <td><?php echo $id; ?></td>
-                                            <td><?php echo $cust; ?></td>
                                             <td><?php echo $nama; ?></td>
                                             <td><?php echo $paket; ?></td>
                                             <td><?php echo $qty; ?></td>
+
                                             <td><?php echo $harga; ?></td>
-                                            <td><?php echo $bayar; ?></td>
-                                            <td><?php echo $kembali; ?></td>                                            
+                                            <td><?php echo $total; ?></td>
+                                            <td><?php echo $ambil; ?></td>
+                                            <td><?php echo $status; ?></td>
+                                                                              
                                             <td>
-                                            <a href="edittransaksi.php?id_transaksi=<?php echo $row['id_transaksi']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edittransaksi.php?kode_transaksi=<?php echo $row['kode_transaksi']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" 
-                                            onClick="confirmModal('hapustransaksi.php?&id_transaksi=<?php echo $row['id_transaksi']; ?>');">
+                                            onClick="confirmModal('hapustransaksi.php?&kode_transaksi=<?php echo $row['kode_transaksi']; ?>');">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>

@@ -13,35 +13,40 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
-    $transaksi = $_POST['txt_id'];
-    $tgl = $_POST['txt_tgl'];
-    $cust = $_POST['txt_idc'];
-    $nama = $_POST['txt_nama'];
-    $pkt = $_POST['txt_idp'];
-    $qty = $_POST['txt_qty'];
-    $biaya = $_POST['txt_biaya'];
-    $bayar = $_POST['txt_bayar'];
-    $kembali = $_POST['txt_kembali'];
+   
+    $tgl        = $_POST['txt_tgl'];
+    $transaksi  = $_POST['txt_id'];
+    $nama       = $_POST['txt_cust'];
+    $paket      = $_POST['txt_paket'];
+    $qty        = $_POST['txt_qty'];
+    $harga      = $_POST['txt_harga'];
+    $total      = $_POST['txt_t'];
+    $ambil      = $_POST['txt_a'];
+    $status     = $_POST['txt_s'];
+    $cust       = $_POST['txt_kc'];
+    $pkt        = $_POST['txt_kp'];
 
-    $query = "UPDATE tb_transaksi SET tanggal='$tgl', id_customer='$cust', nama='$nama', id_paket='$pkt', qty='$qty', biaya='$biaya', bayar='$bayar', kembalian='$kembali' WHERE id_transaksi='$transaksi'";
+    $query = "UPDATE tb_transaksi SET tgl_masuk='$tgl', nama_customer='$nama', nama_paket='$paket', Qty='$qty', harga_paket='$harga', harga_total='$total', tgl_ambil='$ambil', status='$status', kode_customer=$cust, kode_paket=$pkt WHERE kode_transaksi='$transaksi'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');
 }
-$id = $_GET['id_transaksi'];  
-$query = "SELECT * FROM tb_transaksi WHERE id_transaksi='$id'";
+$id = $_GET['kode_transaksi'];  
+$query = "SELECT * FROM tb_transaksi WHERE kode_transaksi='$id'";
 $result = mysqli_query($koneksi, $query)or die(mysqli_errno($koneksi));
 
 while ($row = mysqli_fetch_array($result)) {
-    $id    = $row['id_transaksi'];
-    $tgl   = $row['tanggal'];
-    $cust  = $row['id_customer'];
-    $nama  = $row['nama'];
-    $pkt   = $row['id_paket'];
-    $qty   = $row['qty'];
-    $biaya = $row['biaya'];
-    $bayar = $row['bayar'];
-    $kembali = $row['kembalian'];
+    $tgl        = $row['tgl_masuk'];
+    $id         = $row['kode_transaksi'];
+    $nama       = $row['nama_customer'];
+    $paket      = $row['nama_paket'];
+    $qty        = $row['Qty'];
+    $harga      = $row['harga_paket'];
+    $total      = $row['harga_total'];
+    $ambil      = $row['tgl_ambil'];
+    $status     = $row['status'];
+    $cust       = $row['kode_customer'];
+    $pkt        = $row['kode_paket'];
 
     ?>
 
@@ -66,9 +71,20 @@ while ($row = mysqli_fetch_array($result)) {
     
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    
+        
+        <link rel="stylesheet" type="text/css" href="assets/plugin/datepicker/css/bootstrap-datepicker">
+        <script type="text/javascript">
+            $(function(){
+            $(".datepicker").datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                todayHighlight: true,
+            });
+            });
+        </script>
+
     </head>
-    
+   
     <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -228,35 +244,43 @@ while ($row = mysqli_fetch_array($result)) {
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="txt_tgl" value="<?php echo $tgl; ?>" >
+                                        <input type="text" class="form-control datepicker" id="exampleInputTgl" name="txt_tgl" value="<?php echo $tgl; ?>" >
                                     </div>
                                     <div class="form-group">
-                                        <label>ID Customer</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="txt_idc" value="<?php echo $cust; ?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nama</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputNama" name="txt_nama" value="<?php echo $nama; ?>">
+                                        <label>Nama Customer</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputNama" name="txt_cust" value="<?php echo $nama; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Paket</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="txt_idp" value="<?php echo $pkt; ?>">
+                                        <input type="text" class="form-control form-control-user" id="exampleInputPaket" name="txt_paket" value="<?php echo $paket; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Qty</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="txt_qty" value="<?php echo $qty; ?>" >
+                                        <input type="text" class="form-control form-control-user" id="exampleInputQty" name="txt_qty" value="<?php echo $qty; ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Biaya</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="txt_biaya" value="<?php echo $biaya; ?>">
+                                        <label>Harga</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputHarga" name="txt_harga" value="<?php echo $harga; ?>" >
                                     </div>
                                     <div class="form-group">
-                                        <label>Bayar</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="txt_bayar" value="<?php echo $bayar; ?>">
+                                        <label>Total</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputTotal" name="txt_t" value="<?php echo $total; ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Kembali</label>
-                                        <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="txt_kembali" value="<?php echo $kembali; ?>">
+                                        <label>Ambil</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputAmbil" name="txt_a" value="<?php echo $ambil; ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputStatus" name="txt_s" value="<?php echo $status; ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kode Customer</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputCustomer" name="txt_kc" value="<?php echo $cust; ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kode Paket</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleInputPaket" name="txt_kp" value="<?php echo $pkt; ?>">
                                     </div>
                                     <hr>
                                     <div class="form-group row" style="position: relative; float: right; ">
@@ -327,6 +351,7 @@ while ($row = mysqli_fetch_array($result)) {
     
         <!-- Page level custom scripts -->
         <script src="js/demo/datatables-demo.js"></script>
+        <script type="text/javascript" src="bootstrap-datepicker.de.js" charset="UTF-8"></script>
     </body>
     
     </html>
