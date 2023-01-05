@@ -215,7 +215,7 @@ if( isset($_POST['insert']) ){
                                 <div class="form-group">
                                     <label>ID Transaksi</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputId"
-                                        placeholder="ID Transaksi" name="txt_id">
+                                        placeholder="" name="txt_id">
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal</label>
@@ -223,40 +223,50 @@ if( isset($_POST['insert']) ){
                                         placeholder="yyyy-mm-dd" name="txt_tgl">
                                 </div>
                                 <div class="form-group">
-                                    <label>ID Customer</label>
+                                    <label>Nama Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputIdc"
-                                        placeholder="id cust" name="txt_idc">
+                                        placeholder="" name="txt_cust">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama Customer</label>
+                                    <label>Nama Paket</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputNama"
-                                        placeholder="Nama" name="txt_nama">
+                                        placeholder="" name="txt_paket">
                                 </div>
                                
                                 <div class="form-group">
-                                    <label>Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputIdp"
-                                        placeholder="Paket" name="txt_idp">
-                                </div>
-                                <div class="form-group">
                                     <label>Qty</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputIdp"
+                                        placeholder="" name="txt_qty ">
+                                </div>
+                                <div class="form-group">
+                                    <label>Harga/Kg</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputQty"
-                                        placeholder="Qty" name="txt_qty">
+                                        placeholder="" name="txt_harga">
                                 </div>
                                 <div class="form-group">
-                                    <label>Biaya</label>
+                                    <label>Total</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputBiaya"
-                                        placeholder="Biaya" name="txt_biaya">
+                                        placeholder="" name="txt_t">
                                 </div>
                                 <div class="form-group">
-                                    <label>Bayar</label>
+                                    <label>Tanggal Ambil</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputBayar"
-                                        placeholder="Byaar" name="txt_bayar">
+                                        placeholder="" name="txt_a">
                                 </div>
                                 <div class="form-group">
-                                    <label>Kembali</label>
+                                    <label>Status</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputKembali"
-                                        placeholder="Kembali" name="txt_kembali">
+                                        placeholder="" name="txt_s">
+                                </div>
+                                <div class="form-group">
+                                    <label>Kode Customer</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
+                                        placeholder="" name="txt_kc">
+                                </div>
+                                <div class="form-group">
+                                    <label>Kode Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKembali"
+                                        placeholder="" name="txt_kp">
                                 </div>
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
