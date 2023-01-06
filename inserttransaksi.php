@@ -30,12 +30,7 @@ if( isset($_POST['insert']) ){
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');
 }
-    //pengujian status
-    if($status == "Done"){
-        $status = "Done";
-    }else($status == "On Prosses"){
-        $status = "On Prosess";
-    }
+   
 ?>
 
 <!DOCTYPE html>
