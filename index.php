@@ -62,17 +62,7 @@ if( isset($_POST['insert']) ){
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-    <style type="text/css">
-        BODY{
-            width: auto;
-        }
-        #chart-container{
-            width: 700px;
-            height: 350px;
-        }
-        </style>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -233,7 +223,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="tables.php">Staff</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_user,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/hijab_work.jpg" style="width: 50px">
+                                        <div class="col-auto"><img src="img/hijab_work.jpg" style="width: 100px">
                                         <i class="" aria-hidden="true"></i>
                                         </div>
                                     </div>
@@ -251,7 +241,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="tcustomer.php">Customer</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_customer,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/cust.jpg" style="width: 50px">
+                                        <div class="col-auto"><img src="img/cust.jpg" style="width: 100px">
                                         <i class="" aria-hidden="true"></i>
                                         </div>
                                     </div>
@@ -269,7 +259,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="tpaket.php">Layanan Laundry</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_paket,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/layanan.jpg" style="width: 50px">
+                                        <div class="col-auto"><img src="img/layanan.jpg" style="width: 100px">
                                         <i class="" aria-hidden="true"></i>
                                           
                                         </div>
@@ -288,7 +278,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="ttransaksi.php">Transaksi</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_transaksi,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/cart.png" style="width: 50px">
+                                        <div class="col-auto"><img src="img/keranjang.webp" style="width: 120px">
                                         <i class="" aria-hidden="true"></i>
                                             
                                         </div>
@@ -301,12 +291,12 @@ if( isset($_POST['insert']) ){
                         <div class="row">
 
                         <!-- Area Chart -->
-                        <div class="col">
+                        <div class="col-xl-8 col-md-6 mb-4">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Transaksi Laundry</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Transaksi</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -314,64 +304,23 @@ if( isset($_POST['insert']) ){
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
-                                            
+                                            <div class="dropdown-header">Dropdown Header:</div>
                                             <a class="dropdown-item" href="ttransaksi.php">See More</a>
                                            
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div id="chart-container">
-                                    <canvas id="graphCanvas"></canvas>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
                                 </div>
-                                <script>
-                                $(document).ready(function (){
-                                    showGraph();
-                                });
-
-                                function showGraph()
-                                {
-                                    {
-                                        $.post("bar_encode.php",
-                                        function (data)
-                                        {
-                                            console.log(data);
-                                            var xi = [];
-                                            var yi = [];
-
-                                            for (var i in data){
-                                            xi.push(data[i].tgl_masuk);
-                                            yi.push(dataa[i].harga_total);
-                                            }
-                                            var chartdata = {
-                                                
-                                                datasets: [
-                                                    {
-                                                       
-                                                        backgroundColor: '#355bcc',
-                                                        borderColor: '#355bcc',
-                                                        hoverBackgroundColor: '#355bcc',
-                                                        hoverBorderColor: '#355bcc',
-                                                        data: yi
-                                                    }
-                                                ]
-                                            };
-
-                                            var graphTarget = $("#graphCanvas");
-
-                                            var barGraph = new Chart(graphTarget, {
-                                                type: 'line',
-                                                dataa: chartdata
-                                            });
-                                        });
-                                    }
-                                }
-                                </script>
                             </div>
                         </div>
 
                         <!-- Pie Chart -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -384,58 +333,29 @@ if( isset($_POST['insert']) ){
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
-                                           
-                                            <a class="dropdown-item" href="ttransaksi.php">See More</a>
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div id="chart-container">
-                                    <canvas id="graphCanvas"></canvas>
+                                <div class="card-body">
+                                    <div class="chart-pie pt-8 pb-4">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
+                                        
+                                    </div>
                                 </div>
-                                <script>
-                                $(document).ready(function (){
-                                    showGraph();
-                                });
-
-                                function showGraph()
-                                {
-                                    {
-                                        $.post("grafik.php",
-                                        function (data)
-                                        {
-                                            console.log(data);
-                                            var id = [];
-                                            var jual = [];
-
-                                            for (var i in data){
-                                            id.push(data[i].tgl_masuk);
-                                            jual.push(data[i].harga_total);
-                                            }
-                                            var chartdata = {
-                                                labels : id,
-                                                datasets: [
-                                                    {
-                                                        label: 'Tanggal Transaksi',
-                                                        backgroundColor: '#355bcc',
-                                                        borderColor: '#355bcc',
-                                                        hoverBackgroundColor: '#355bcc',
-                                                        hoverBorderColor: '#355bcc',
-                                                        data: jual
-                                                    }
-                                                ]
-                                            };
-
-                                            var graphTarget = $("#graphCanvas");
-
-                                            var barGraph = new Chart(graphTarget, {
-                                                type: 'line',
-                                                data: chartdata
-                                            });
-                                        });
-                                    }
-                                }
-                                </script>
                             </div>
 
                         </div>
