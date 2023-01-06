@@ -231,7 +231,7 @@ if( isset($_POST['insert']) ){
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputTgl"
+                                    <input type="date" class="form-control form-control-user" id="exampleInputTgl"
                                         placeholder="yyyy-mm-dd" name="txt_tgl">
                                 </div>
                                 <div class="form-group">
@@ -262,13 +262,19 @@ if( isset($_POST['insert']) ){
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Ambil</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputAmbil"
+                                    <input type="date" class="form-control form-control-user" id="exampleInputAmbil"
                                         placeholder="" name="txt_a">
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputStatus"
-                                        placeholder="" name="txt_s">
+                                    <select class="form-control " id="exampleInputStatus"
+                                         name="txt_s">
+                                        <option value="" selected hidden>Select Status</option>
+                                        <option value="selesai">selesai</option>
+                                        <option value="belum">belum</option>
+                                    </select>
+                                    
+  
                                 </div>
                                 <div class="form-group">
                                     <label>Kode Customer</label>

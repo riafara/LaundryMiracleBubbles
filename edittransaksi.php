@@ -233,7 +233,7 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 <div class="form-group">
                                     <label>Tgl. Transaksi</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputTgl" name="txt_tgl" value="<?php echo $tgl; ?>">
+                                    <input type="date" class="form-control form-control-user" id="exampleInputTgl" name="txt_tgl" value="<?php echo $tgl; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Customer</label>
@@ -257,7 +257,7 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Ambil</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputAmbil" name="txt_a" value="<?php echo $ambil; ?>">
+                                    <input type="date" class="form-control form-control-user" id="exampleInputAmbil" name="txt_a" value="<?php echo $ambil; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
