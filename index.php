@@ -278,8 +278,8 @@ if( isset($_POST['insert']) ){
                                                 <a href="ttransaksi.php">Transaksi</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_transaksi,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto">
-                                        <i class="fa fa-shopping-cart fa-2x text-gray-300" aria-hidden="true"></i>
+                                        <div class="col-auto"><img src="img/cart.png" style="width: 120px">
+                                        <i class="" aria-hidden="true"></i>
                                             
                                         </div>
                                     </div>
