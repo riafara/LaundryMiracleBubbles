@@ -262,6 +262,8 @@ while ($row = mysqli_fetch_array($result)){
                                 <div class="form-group">
                                     <label>Status</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputStatus" name="txt_s" value="<?php echo $status; ?>">
+                                   
+                
                                 </div>
                                 <div class="form-group">
                                     <label>Kode Customer</label>
