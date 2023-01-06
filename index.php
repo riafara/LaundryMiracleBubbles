@@ -233,7 +233,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="tables.php">Staff</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_user,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/hijab_work.jpg" style="width: 100px">
+                                        <div class="col-auto"><img src="img/hijab_work.jpg" style="width: 50px">
                                         <i class="" aria-hidden="true"></i>
                                         </div>
                                     </div>
@@ -251,7 +251,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="tcustomer.php">Customer</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_customer,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/cust.jpg" style="width: 100px">
+                                        <div class="col-auto"><img src="img/cust.jpg" style="width: 50px">
                                         <i class="" aria-hidden="true"></i>
                                         </div>
                                     </div>
@@ -269,7 +269,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="tpaket.php">Layanan Laundry</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_paket,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/layanan.jpg" style="width: 100px">
+                                        <div class="col-auto"><img src="img/layanan.jpg" style="width: 50px">
                                         <i class="" aria-hidden="true"></i>
                                           
                                         </div>
@@ -288,7 +288,7 @@ if( isset($_POST['insert']) ){
                                                 <a href="ttransaksi.php">Transaksi</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_transaksi,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/cart.png" style="width: 120px">
+                                        <div class="col-auto"><img src="img/cart.png" style="width: 50px">
                                         <i class="" aria-hidden="true"></i>
                                             
                                         </div>
