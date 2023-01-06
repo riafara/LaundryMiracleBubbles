@@ -268,7 +268,7 @@ if( isset($_POST['insert']) ){
                                 <div class="form-group">
                                     <label>Status</label>
                                     <select class="form-control " id="exampleInputStatus"
-                                         name="txt_s">
+                                         name="txt_s" style="border-radius: 30px; height: 50px">
                                         <option value="" selected hidden>Select Status</option>
                                         <option value="selesai">selesai</option>
                                         <option value="belum">belum</option>
