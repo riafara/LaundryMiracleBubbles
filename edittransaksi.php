@@ -19,7 +19,7 @@ if( isset($_POST['update']) ){
     $paket      = $_POST['txt_paket'];
     $qty        = $_POST['txt_qty'];
     $harga      = $_POST['txt_harga'];
-    $total      = $_POST['txt_t'];
+    $total      = $qty*$harga;
     $ambil      = $_POST['txt_a'];
     $status     = $_POST['txt_s'];
     $cust       = $_POST['txt_kc'];
@@ -269,10 +269,7 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="number" class="form-control form-control-user" id="exampleInputQty" name="txt_qty" value="<?php echo $qty; ?>">
                                 </div>
                                 
-                                <div class="form-group">
-                                    <label>Total</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputTotal" name="txt_t" value="<?php echo $total; ?>">
-                                </div>
+                                
                                 
                                 <div class="form-group">
                                     <label>Status</label>

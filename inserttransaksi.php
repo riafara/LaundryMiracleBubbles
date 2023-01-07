@@ -19,7 +19,7 @@ if( isset($_POST['insert']) ){
     $paket      = $_POST['txt_paket'];
     $qty        = $_POST['txt_qty'];
     $harga      = $_POST['txt_harga'];
-    $total      = $_POST['txt_t'];
+    $total      = $qty*$harga;
     $ambil      = $_POST['txt_a'];
     $status     = $_POST['txt_s'];
     $cust       = $_POST['txt_kc'];
@@ -251,13 +251,6 @@ $select         = mysqli_query($koneksi, $join);
                                     <input type="number" class="form-control form-control-user" id="exampleInputQty"
                                         placeholder="" name="txt_qty">
                                 </div>
-                                
-                                <div class="form-group">
-                                    <label>Total</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputTotal"
-                                        placeholder="" name="txt_t">
-                                </div>
-                                
                                 <div class="form-group">
                                     <label>Status</label>
                                     <select class="form-control " id="exampleInputStatus"
