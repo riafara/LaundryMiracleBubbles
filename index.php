@@ -439,7 +439,7 @@ if( isset($_POST['insert']) ){
                             </div>
 
                         </div>
-</div>
+                    </div>
                     
                 
             </div>
