@@ -200,11 +200,11 @@ $sesLvl = $_SESSION['level'];
                                             <th>Tgl. Masuk</th>
                                             <th>Customer</th>
                                             <th>Paket</th>
-                                            <th>Berat</th>
-                                            <th>Harga/KG</th>
+                                           
                                             <th>Total</th>
                                             <th>Tgl. Keluar</th>
                                             <th>Status</th>
+                                            <th>Nota</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -237,13 +237,14 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $tgl; ?></td>
                                             <td><?php echo $nama; ?></td>
                                             <td><?php echo $paket; ?></td>
-                                            <td><?php echo $qty; ?></td>
-
-                                            <td><?php echo $harga; ?></td>
+                                           
                                             <td><?php echo $total; ?></td>
                                             <td><?php echo $ambil; ?></td>
                                             <td><?php echo $status; ?></td>
-                                                                              
+                                            <td>
+                                            <a href="nota.php" class="btn btn-warning btn-user btn-block">Print</a>
+
+                                            </td>                                 
                                             <td>
                                             <a href="edittransaksi.php?kode_transaksi=<?php echo $row['kode_transaksi']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
@@ -252,6 +253,7 @@ $sesLvl = $_SESSION['level'];
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>
+
                                         </tr>
                                         <?php
                                             $no++;

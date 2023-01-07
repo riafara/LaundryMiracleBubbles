@@ -30,7 +30,9 @@ if( isset($_POST['insert']) ){
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');
 }
-   
+  
+$join           = "SELECT * FROM tb_transaksi join tb_customer on tb_customer.kode_customer = tb_transaksi.kode_customer join tb_paket on tb_transaksi.kode_paket = tb_paket.kode_paket";
+$select         = mysqli_query($koneksi, $join);
 ?>
 
 <!DOCTYPE html>
@@ -259,10 +261,11 @@ if( isset($_POST['insert']) ){
                                     <input type="text" class="form-control form-control-user" id="exampleInputPaket"
                                         placeholder="" name="txt_paket">
                                 </div>
+                                
                                 <div class="col-sm-4">
                                     <label>Harga/Kg</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputHarga"
-                                        placeholder="" name="txt_harga">
+                                        placeholder="" name="txt_harga" >
                                 </div>
                                 <div class="col-sm-4">
                                     <label>Kode Paket</label>
