@@ -66,25 +66,51 @@ while ($row = mysqli_fetch_array($result)){
 </head>
 <body>
 <div class="container">
-	<center><h3>NOTA LAUNDRY <?php echo $id; ?></h3></center>
+	<center><h3>Nota Laundry MiracleBubbles</h3></center>
 </div>
 <br>
-<h4> Nama : <?php echo $nama; ?></h4>
-<h4> Tgl. Masuk : <?php echo $tgl; ?></h4>
-<h4> Tgl. Keluar : <?php echo $ambil; ?></h4>
+<br>
+<tr>
+  <td>Nama</td>
+  <td>:</td>
+  <td><?php echo $nama; ?></td>
+</tr>
+<br>
+<br>
+<tr>
+  <td>No Transaksi</td>
+  <td>:</td>
+  <td><?php echo $id; ?></td>
+</tr>
+
+<br>
+<br>
+<tr>
+  <td>Tanggal Masuk</td>
+  <td>:</td>
+  <td><?php echo $tgl; ?></td>
+</tr>
+<br>
+<br>
+<tr>
+  <td>Tanggal Keluar</td>
+  <td>:</td>
+  <td><?php echo $ambil; ?></td>
+</tr>
+<br>
 <br>
 <table border="1" style="width: 100%">
   <tr text-align: left;>
     <td>Paket</td>
     <td>Berat</td>
     <td>Harga</td>
-	<td>Total</td>
+	  <td>Total</td>
   </tr>
   <tr>
     <td><?php echo $paket; ?></td>
     <td><?php echo $qty; ?></td>
     <td><?php echo $harga; ?></td>
-	<td><?php echo $total; ?></td>
+	  <td><?php echo $total; ?></td>
   </tr>
 </table>
 	<br>
@@ -96,7 +122,7 @@ while ($row = mysqli_fetch_array($result)){
 		<li>Periksa saku sebelum masuk cucian, kehilangan BUKAN TANGGUNG JAWAB KAMI.</li>
 		<li>Kondisi Order jika tidak diambil MAKSIMAL 2x24 JAM diluar TANGGUNG JAWAB KAMI.</li>
 		<li>Order Awal yang rusak, mudah luntur & menyusut tanpa pemberitahuan diluar TANGGUNG JAWAB KAMI.</li>
-		<li>Konsumen dianggap setuju dengan isi aturan diatas</li>
+		<li>Konsumen dianggap setuju dengan isi aturan diatas.</li>
 	</ol> 
 
 	<center>---- Terima Kasih atas kepercayaan Anda ---</center>
