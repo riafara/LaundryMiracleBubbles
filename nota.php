@@ -31,9 +31,9 @@ if( isset($_POST['update']) ){
     header('Location: ttransaksi.php');
 }
 $id = $_GET['kode_transaksi'];
-$cust = $_GET['kode_customer'];
+
 $query = "SELECT * FROM tb_transaksi WHERE kode_transaksi='$id'";
-$query1 = "SELECT * FROM tb_customer WHERE kode_customer='$cust'";
+
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
@@ -49,11 +49,7 @@ while ($row = mysqli_fetch_array($result)){
     $status     = $row['status'];
     $cust       = $row['kode_customer'];
     $pkt        = $row['kode_paket'];
-	$id   = $row['kode_customer'];
-    $nama = $row['nama_customer'];
-    $alamat= $row['alamat'];
-    $hp   = $row['nohp'];
-
+	
 ?>
 
 <!DOCTYPE html>
@@ -70,62 +66,37 @@ while ($row = mysqli_fetch_array($result)){
 </head>
 <body>
 <div class="container">
-		<center><h3><em>NOTA LAUNDRY</em></h3></center>
-	</div>
-	<div class="inputan">
-		<div class="container">
-			
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<table width="329">
-				  <tr>
-				    <td width="108" height="50"><B>Nama</B></td>
-				    <td width="194">: <input style="border:none" type="text"  name="namacustomer" value="<?php echo $nama; ?>" readonly></td>
-				  </tr>
-				  <tr>
-				    <td height="50"><B>Alamat</B></td>
-				    <td>: <input style="border:none" type="text" name="alamat" value="<?php echo $row ['3']; ?>" readonly></td><br>
-				  </tr>
-				  <tr>
-				    <td height="50"><B>Telp.</B></td>
-				    <td>: <input style="border:none" type="text"  name="tlpn" value="<?php echo $row ['4']; ?>" readonly></td>
-				  </tr>
-				</table>
-			</div>
+	<center><h3>NOTA LAUNDRY <?php echo $id; ?></h3></center>
+</div>
+<br>
+<h4> Nama : <?php echo $nama; ?></h4>
+<h4> Tgl. Masuk : <?php echo $tgl; ?></h4>
+<h4> Tgl. Keluar : <?php echo $ambil; ?></h4>
+<br>
+<table border="1" style="width: 100%">
+  <tr text-align: left;>
+    <td>Paket</td>
+    <td>Berat</td>
+    <td>Harga</td>
+	<td>Total</td>
+  </tr>
+  <tr>
+    <td><?php echo $paket; ?></td>
+    <td><?php echo $qty; ?></td>
+    <td><?php echo $harga; ?></td>
+	<td><?php echo $total; ?></td>
+  </tr>
+</table>
+	<br>
+	<h4><em>Perhatian</em><h4>
 
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<table width="329">
-				  <tr>
-				    <td width="108" height="50"><B>NOTA</B></td>
-				    <td width="194">: <input style="border:none" type="text"  name="no" value="<?php echo $row ['0']; ?>" readonly></td>
-				  </tr>
-				  <tr>
-				    <td height="50"><B>Tgl. Diterima</B></td>
-				    <td>: <input style="border:none" type="date" name="tglditerima" value="<?php echo $row ['7']; ?>" readonly></td><br>
-				  </tr>
-				  
-				</table>
-			</div>
-		</div>
-	</div>
- 
-		<h2>NOTA LAUNDRY</h2>
-		<h4>Nama  : <?php echo $nama; ?></h4>
-		<br>
-		<h4>Tanggal Masuk  : <?php echo $tgl; ?></h4>
-		<h4>Tanggal Keluar  : <?php echo $ambil; ?></h4>
- 
-	
- 
-	<h4>Perhatian<h4>
-
-	<ol style:"align: justify">
-	<li>Pengambilan ORDER WAJIB DISERTAI NOTA TRANSAKSI.</li>
-	<li>Harap periksa & dihitung kembali jumlah serta kondisi order bersama PETUGAS KAMI,<br>
-		karena KOMPLAIN DAN GARANSI dalam bentuk apapun setelah penerimaan Order<br> akan KAMI ABAIKAN</li>
-	<li>Periksa saku sebelum masuk cucian, kehilangan BUKAN TANGGUNG JAWAB KAMI.</li>
-	<li>Kondisi Order jika tidak diambil MAKSIMAL 2x24 JAM diluar TANGGUNG JAWAB KAMI.</li>
-	<li>Order Awal yang rusak, mudah luntur & menyusut tanpa pemberitahuan <br> diluar TANGGUNG JAWAB KAMI.</li>
-	<li>Konsumen dianggap setuju dengan isi aturan diatas</li>
+	<ol text-align: justify>
+		<li>Pengambilan ORDER WAJIB DISERTAI NOTA TRANSAKSI.</li>
+		<li>Harap periksa & dihitung kembali jumlah serta kondisi order bersama PETUGAS KAMI, karena KOMPLAIN DAN GARANSI dalam bentuk apapun setelah penerimaan Order akan KAMI ABAIKAN</li>
+		<li>Periksa saku sebelum masuk cucian, kehilangan BUKAN TANGGUNG JAWAB KAMI.</li>
+		<li>Kondisi Order jika tidak diambil MAKSIMAL 2x24 JAM diluar TANGGUNG JAWAB KAMI.</li>
+		<li>Order Awal yang rusak, mudah luntur & menyusut tanpa pemberitahuan diluar TANGGUNG JAWAB KAMI.</li>
+		<li>Konsumen dianggap setuju dengan isi aturan diatas</li>
 	</ol> 
 
 	<center>---- Terima Kasih atas kepercayaan Anda ---</center>
