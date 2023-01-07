@@ -242,7 +242,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $ambil; ?></td>
                                             <td><?php echo $status; ?></td>
                                             <td>
-                                            <a href="nota.php" class="btn btn-warning btn-user btn-block">Print</a>
+                                            <a href="nota.php?kode_transaksi=<?php echo $row['kode_transaksi']; ?>" class="btn btn-warning btn-user btn-block">Print</a>
 
                                             </td>                                 
                                             <td>
