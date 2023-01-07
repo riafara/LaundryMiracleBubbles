@@ -68,36 +68,28 @@ while ($row = mysqli_fetch_array($result)){
 <div class="container">
 	<center><h3>Nota Laundry MiracleBubbles</h3></center>
 </div>
-<br>
-<br>
+<table style= border = '0'>
 <tr>
   <td>Nama</td>
   <td>:</td>
   <td><?php echo $nama; ?></td>
 </tr>
-<br>
-<br>
 <tr>
   <td>No Transaksi</td>
   <td>:</td>
   <td><?php echo $id; ?></td>
 </tr>
-<br>
-<br>
 <tr>
   <td>Tanggal Masuk</td>
   <td>:</td>
   <td><?php echo $tgl; ?></td>
 </tr>
-<br>
-<br>
 <tr>
   <td>Tanggal Keluar</td>
   <td>:</td>
   <td><?php echo $ambil; ?></td>
 </tr>
-<br>
-<br>
+</table>
 <table border="1" style="width: 100%">
   <tr style="text-align:center">
     <td width='30%'>Paket</td>
