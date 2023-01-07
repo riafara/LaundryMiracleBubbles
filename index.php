@@ -229,12 +229,12 @@ if( isset($_POST['insert']) ){
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 <a href="tables.php">Staff</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_user,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/hijab_work.jpg" style="width: 100px">
-                                        <i class="" aria-hidden="true"></i>
+                                        <div class="col-auto">
+                                        <i class="fa fa-user fa-2x text-gray-300" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -251,8 +251,8 @@ if( isset($_POST['insert']) ){
                                                 <a href="tcustomer.php">Customer</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_customer,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/cust.jpg" style="width: 100px">
-                                        <i class="" aria-hidden="true"></i>
+                                        <div class="col-auto">
+                                        <i class="fa fa-users fa-2x text-gray-300" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -269,8 +269,8 @@ if( isset($_POST['insert']) ){
                                                 <a href="tpaket.php">Layanan Laundry</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_paket,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/layanan.jpg" style="width: 100px">
-                                        <i class="" aria-hidden="true"></i>
+                                        <div class="col-auto">
+                                        <i class="fa fa-tasks fa-2x text-gray-300" aria-hidden="true"></i>
                                           
                                         </div>
                                     </div>
@@ -288,8 +288,8 @@ if( isset($_POST['insert']) ){
                                                 <a href="ttransaksi.php">Transaksi</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_transaksi,0,",",".")?></div>
                                         </div>
-                                        <div class="col-auto"><img src="img/cart.png" style="width: 120px">
-                                        <i class="" aria-hidden="true"></i>
+                                        <div class="col-auto">
+                                        <i class="fa fa-shopping-cart fa-2x text-gray-300" aria-hidden="true"></i>
                                             
                                         </div>
                                     </div>
