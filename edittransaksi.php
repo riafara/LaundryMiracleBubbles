@@ -231,48 +231,61 @@ while ($row = mysqli_fetch_array($result)){
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="txt_id" value="<?php echo $id; ?>">
                                 </div>
-                                <div class="form-group">
-                                    <label>Tgl. Transaksi</label>
+                                <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label>Tanggal Masuk</label>
                                     <input type="date" class="form-control form-control-user" id="exampleInputTgl" name="txt_tgl" value="<?php echo $tgl; ?>">
                                 </div>
-                                <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label>Tanggal Keluar</label>
+                                    <input type="date" class="form-control form-control-user" id="exampleInputAmbil" name="txt_a" value="<?php echo $ambil; ?>">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label>Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputNama" name="txt_cust" value="<?php echo $nama; ?>">
                                 </div>
-                                <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label>Kode Customer</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKc" name="txt_kc" value="<?php echo $cust; ?>">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label>Paket</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputPaket" name="txt_paket" value="<?php echo $paket; ?>">
                                 </div>
-                                <div class="form-group">
-                                    <label>Berat</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputQty" name="txt_qty" value="<?php echo $qty; ?>">
-                                </div>
-                                <div class="form-group">
+                                <div class="col-sm-4">
                                     <label>Harga/Kg</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputHarga" name="txt_harga" value="<?php echo $harga; ?>">
                                 </div>
+                                <div class="col-sm-4">
+                                    <label>Kode Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKp" name="txt_kp" value="<?php echo $pkt; ?>">
+                                </div></div>
+                                <div class="form-group">
+                                    <label>Berat</label>
+                                    <input type="number" class="form-control form-control-user" id="exampleInputQty" name="txt_qty" value="<?php echo $qty; ?>">
+                                </div>
+                                
                                 <div class="form-group">
                                     <label>Total</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputTotal" name="txt_t" value="<?php echo $total; ?>">
                                 </div>
-                                <div class="form-group">
-                                    <label>Tanggal Ambil</label>
-                                    <input type="date" class="form-control form-control-user" id="exampleInputAmbil" name="txt_a" value="<?php echo $ambil; ?>">
-                                </div>
+                                
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputStatus" name="txt_s" value="<?php echo $status; ?>">
-                                   
+                                    <select class="form-control " id="exampleInputStatus"
+                                         name="txt_s" value="<?php echo $status; ?>" style="border-radius: 30px; height: 50px">
+                                        
+                                        <option value="selesai">selesai</option>
+                                        <option value="belum">belum</option>
+                                    </select>
                 
                                 </div>
-                                <div class="form-group">
-                                    <label>Kode Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKc" name="txt_kc" value="<?php echo $cust; ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label>Kode Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKp" name="txt_kp" value="<?php echo $pkt; ?>">
-                                </div>
+                                
+                                
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">

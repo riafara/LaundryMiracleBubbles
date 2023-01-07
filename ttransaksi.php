@@ -197,13 +197,13 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tgl. Transaksi</th>
+                                            <th>Tgl. Masuk</th>
                                             <th>Customer</th>
                                             <th>Paket</th>
                                             <th>Berat</th>
                                             <th>Harga/KG</th>
                                             <th>Total</th>
-                                            <th>Tgl. Ambil</th>
+                                            <th>Tgl. Keluar</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>

@@ -229,42 +229,59 @@ if( isset($_POST['insert']) ){
                                     <input type="text" value="<?php echo $kd_transaksi?>" class="form-control form-control-user" id="exampleInputId"
                                         name="txt_id" readonly>
                                 </div>
-                                <div class="form-group">
-                                    <label>Tanggal</label>
+                                <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label>Tanggal Masuk</label>
                                     <input type="date" class="form-control form-control-user" id="exampleInputTgl"
                                         placeholder="yyyy-mm-dd" name="txt_tgl">
                                 </div>
-                                <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label>Tanggal Keluar</label>
+                                    <input type="date" class="form-control form-control-user" id="exampleInputAmbil"
+                                        placeholder="" name="txt_a">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label>Nama Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputCust"
                                         placeholder="Nama Customer" name="txt_cust">
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <label>Kode Customer</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKodeCustomer"
+                                        placeholder="" name="txt_kc" >
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label>Nama Paket</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputPaket"
                                         placeholder="" name="txt_paket">
                                 </div>
-                               
-                                <div class="form-group">
-                                    <label>Qty</label>
-                                    <input type="number" class="form-control form-control-user" id="exampleInputQty"
-                                        placeholder="" name="txt_qty">
-                                </div>
-                                <div class="form-group">
+                                <div class="col-sm-4">
                                     <label>Harga/Kg</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputHarga"
                                         placeholder="" name="txt_harga">
                                 </div>
+                                <div class="col-sm-4">
+                                    <label>Kode Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKodePaket"
+                                        placeholder="" name="txt_kp" >
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Berat</label>
+                                    <input type="number" class="form-control form-control-user" id="exampleInputQty"
+                                        placeholder="" name="txt_qty">
+                                </div>
+                                
                                 <div class="form-group">
                                     <label>Total</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputTotal"
                                         placeholder="" name="txt_t">
                                 </div>
-                                <div class="form-group">
-                                    <label>Tanggal Ambil</label>
-                                    <input type="date" class="form-control form-control-user" id="exampleInputAmbil"
-                                        placeholder="" name="txt_a">
-                                </div>
+                                
                                 <div class="form-group">
                                     <label>Status</label>
                                     <select class="form-control " id="exampleInputStatus"
@@ -276,16 +293,8 @@ if( isset($_POST['insert']) ){
                                     
   
                                 </div>
-                                <div class="form-group">
-                                    <label>Kode Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKodeCustomer"
-                                        placeholder="" name="txt_kc">
-                                </div>
-                                <div class="form-group">
-                                    <label>Kode Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKodePaket"
-                                        placeholder="" name="txt_kp">
-                                </div>
+                                
+                                
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
