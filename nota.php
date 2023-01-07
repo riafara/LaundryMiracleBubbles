@@ -82,7 +82,6 @@ while ($row = mysqli_fetch_array($result)){
   <td>:</td>
   <td><?php echo $id; ?></td>
 </tr>
-
 <br>
 <br>
 <tr>
@@ -100,13 +99,13 @@ while ($row = mysqli_fetch_array($result)){
 <br>
 <br>
 <table border="1" style="width: 100%">
-  <tr text-align: left;>
-    <td>Paket</td>
-    <td>Berat</td>
-    <td>Harga</td>
-	  <td>Total</td>
+  <tr style="text-align:center">
+    <td width='30%'>Paket</td>
+    <td width='20%'>Berat</td>
+    <td width='25%'>Harga</td>
+	  <td width='25%'>Total</td>
   </tr>
-  <tr>
+  <tr style="text-align:center">
     <td><?php echo $paket; ?></td>
     <td><?php echo $qty; ?></td>
     <td><?php echo $harga; ?></td>
@@ -114,7 +113,7 @@ while ($row = mysqli_fetch_array($result)){
   </tr>
 </table>
 	<br>
-	<h4><em>Perhatian</em><h4>
+	<h4><em>Perhatian!!!</em><h4>
 
 	<ol text-align: justify>
 		<li>Pengambilan ORDER WAJIB DISERTAI NOTA TRANSAKSI.</li>
@@ -125,7 +124,7 @@ while ($row = mysqli_fetch_array($result)){
 		<li>Konsumen dianggap setuju dengan isi aturan diatas.</li>
 	</ol> 
 
-	<center>---- Terima Kasih atas kepercayaan Anda ---</center>
+	<center>---- Terima Kasih Atas Kepercayaan Anda ---</center>
 	<?php 
 	include 'koneksi.php';
 	?>
