@@ -220,7 +220,7 @@ $select         = mysqli_query($koneksi, $join);
                             $code = $data['max_code'];
                             $sqlcust = mysqli_query($koneksi, "SELECT * FROM tb_customer");
                             $sqlpaket = mysqli_query($koneksi, "SELECT * FROM tb_paket");
-            
+
                             
                             
                             $urutan = (int)substr((string) $code, 1, 3);
@@ -228,6 +228,8 @@ $select         = mysqli_query($koneksi, $join);
                             $urutan++;
                             $huruf = "T";
                             $kd_transaksi = $huruf.sprintf("%03s", $urutan);
+
+                           
                             ?>
                             <form class="user" action="inserttransaksi.php" method="POST">
                                 <div class="form-group">
@@ -247,50 +249,38 @@ $select         = mysqli_query($koneksi, $join);
                                         placeholder="" name="txt_a">
                                 </div>
                                 </div>
-                                <div class="form-group">
-
-                                    <label>Nama Customer</label>
-                                    <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
-                                        placeholder="Nama Customer" name="txt_cust">
+                                <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label>Customer</label>
+                                    <select class="form-control" id="exampleInputCust" name="txt_cust"  style="border-radius: 30px; height: 50px">
                                         <?php while($tb_customer = mysqli_fetch_array($sqlcust,MYSQLI_ASSOC)):;?>
                                         <option value="" selected hidden>Pilih Customer</option>
-                                        <option value="<?php echo $tb_customer["kode_customer"];?>">
+                                        <option value="<?php echo $tb_customer["nama_customer"];?>">
                                         (<?php echo $tb_customer["kode_customer"];?>)
                                         <?php echo $tb_customer["nama_customer"];?>
                                         </option>
                                         <?php endwhile;?>
+
                                     </select>
-                                
                                 </div>
-                                <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="col-sm-6">
                                     <label>Nama Paket</label>
                                     <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
                                         placeholder="Nama Paket" name="txt_paket">
                                         <?php while($tb_paket = mysqli_fetch_array($sqlpaket,MYSQLI_ASSOC)):;?>
                                         <option value="" selected hidden>Pilih Paket</option>
-                                        (<option value="<?php echo $tb_paket["kode_paket"];?>">) 
-                                        <?php echo $tb_paket["kode_paket"];?><?php echo $tb_paket["nama_paket"];?>
-                                        Rp. <?php echo $tb_paket["harga_paket"];?>/Kg
-                                        </option>
-                                        <?php endwhile;?>
-                                    </select>
-                                </div>
-                            
-                                <div class="col-sm-4">
-                                <label>Nama Paket</label>
-                                    <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
-                                        placeholder="Nama Paket" name="txt_paket">
-                                        <?php while($tb_paket = mysqli_fetch_array($sqlpaket,MYSQLI_ASSOC)):;?>
-                                        <option value="" selected hidden>Pilih Paket</option>
-                                        (<option value="<?php echo $tb_paket["kode_paket"];?>">) 
-                                        <?php echo $tb_paket["kode_paket"];?><?php echo $tb_paket["nama_paket"];?>
+                                        <option value="<?php echo $tb_paket["nama_paket"];?>"> 
+                                        (<?php echo $tb_paket["kode_paket"];?>) <?php echo $tb_paket["nama_paket"];?>
                                         Rp. <?php echo $tb_paket["harga_paket"];?>/Kg
                                         </option>
                                         <?php endwhile;?>
                                     </select>
                                 </div>
                                 </div>
+
+
+                                
+                               
                                 <div class="form-group">
                                     <label>Berat</label>
                                     <input type="number" class="form-control form-control-user" id="exampleInputQty"
