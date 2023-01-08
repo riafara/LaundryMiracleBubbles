@@ -30,7 +30,8 @@ if( isset($_POST['insert']) ){
     $result = mysqli_query($koneksi, $query);
     header('Location: ttransaksi.php');
 }
-  
+
+
 $join           = "SELECT * FROM tb_transaksi join tb_customer on tb_customer.kode_customer = tb_transaksi.kode_customer join tb_paket on tb_transaksi.kode_paket = tb_paket.kode_paket";
 $select         = mysqli_query($koneksi, $join);
 ?>
@@ -151,6 +152,33 @@ $select         = mysqli_query($koneksi, $join);
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                       
+
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -190,6 +218,9 @@ $select         = mysqli_query($koneksi, $join);
                             $auto = mysqli_query($koneksi, "SELECT max(kode_transaksi) as max_code FROM tb_transaksi");
                             $data = mysqli_fetch_array($auto);
                             $code = $data['max_code'];
+                            $sqlcust = mysqli_query($koneksi, "SELECT * FROM tb_customer");
+                            $sqlpaket = mysqli_query($koneksi, "SELECT * FROM tb_paket");
+            
                             
                             
                             $urutan = (int)substr((string) $code, 1, 3);
@@ -216,34 +247,48 @@ $select         = mysqli_query($koneksi, $join);
                                         placeholder="" name="txt_a">
                                 </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="form-group">
+
                                     <label>Nama Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputCust"
+                                    <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
                                         placeholder="Nama Customer" name="txt_cust">
-                                    </div>
-                                    <div class="col-sm-6">
-                                    <label>Kode Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKodeCustomer"
-                                        placeholder="" name="txt_kc" >
-                                    </div>
+                                        <?php while($tb_customer = mysqli_fetch_array($sqlcust,MYSQLI_ASSOC)):;?>
+                                        <option value="" selected hidden>Pilih Customer</option>
+                                        <option value="<?php echo $tb_customer["kode_customer"];?>">
+                                        (<?php echo $tb_customer["kode_customer"];?>)
+                                        <?php echo $tb_customer["nama_customer"];?>
+                                        </option>
+                                        <?php endwhile;?>
+                                    </select>
+                                
                                 </div>
                                 <div class="form-group row">
                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label>Nama Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPaket"
-                                        placeholder="" name="txt_paket">
+                                    <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
+                                        placeholder="Nama Paket" name="txt_paket">
+                                        <?php while($tb_paket = mysqli_fetch_array($sqlpaket,MYSQLI_ASSOC)):;?>
+                                        <option value="" selected hidden>Pilih Paket</option>
+                                        (<option value="<?php echo $tb_paket["kode_paket"];?>">) 
+                                        <?php echo $tb_paket["kode_paket"];?><?php echo $tb_paket["nama_paket"];?>
+                                        Rp. <?php echo $tb_paket["harga_paket"];?>/Kg
+                                        </option>
+                                        <?php endwhile;?>
+                                    </select>
                                 </div>
-                                
+                            
                                 <div class="col-sm-4">
-                                    <label>Harga/Kg</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputHarga"
-                                        placeholder="" name="txt_harga" >
-                                </div>
-                                <div class="col-sm-4">
-                                    <label>Kode Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputKodePaket"
-                                        placeholder="" name="txt_kp" >
+                                <label>Nama Paket</label>
+                                    <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
+                                        placeholder="Nama Paket" name="txt_paket">
+                                        <?php while($tb_paket = mysqli_fetch_array($sqlpaket,MYSQLI_ASSOC)):;?>
+                                        <option value="" selected hidden>Pilih Paket</option>
+                                        (<option value="<?php echo $tb_paket["kode_paket"];?>">) 
+                                        <?php echo $tb_paket["kode_paket"];?><?php echo $tb_paket["nama_paket"];?>
+                                        Rp. <?php echo $tb_paket["harga_paket"];?>/Kg
+                                        </option>
+                                        <?php endwhile;?>
+                                    </select>
                                 </div>
                                 </div>
                                 <div class="form-group">
@@ -251,6 +296,8 @@ $select         = mysqli_query($koneksi, $join);
                                     <input type="number" class="form-control form-control-user" id="exampleInputQty"
                                         placeholder="" name="txt_qty">
                                 </div>
+                                
+                                
                                 <div class="form-group">
                                     <label>Status</label>
                                     <select class="form-control " id="exampleInputStatus"
@@ -336,4 +383,4 @@ $select         = mysqli_query($koneksi, $join);
 </body>
 
 </html>
-<?php  ?>
+<?php ?>
