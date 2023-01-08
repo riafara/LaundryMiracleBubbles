@@ -67,8 +67,8 @@ if( isset($_POST['insert']) ){
             width: auto;
         }
         #chart-container{
-            width: 700px;
-            height: 350px;
+            width: 500px;
+            height: auto;
         }
         </style>
         <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -201,7 +201,7 @@ if( isset($_POST['insert']) ){
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                <a href="tables.php">Staff</a></div>
+                                                <a href="tables.php">User</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_user,0,",",".")?></div>
                                         </div>
                                         <div class="col-auto">
@@ -237,7 +237,7 @@ if( isset($_POST['insert']) ){
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                <a href="tpaket.php">Layanan Laundry</a></div>
+                                                <a href="tpaket.php">Paket Laundry</a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($jml_paket,0,",",".")?></div>
                                         </div>
                                         <div class="col-auto">
@@ -293,123 +293,57 @@ if( isset($_POST['insert']) ){
                                 </div>
                                 <!-- Card Body -->
                                 <div id="chart-container">
-                                    <canvas id="graphCanvas"></canvas>
-                                </div>
-                                <script>
-                                $(document).ready(function (){
-                                    showGraph();
-                                });
+                        <canvas id="graphCanvas"></canvas>
 
-                                function showGraph()
+                    </div>
+                    <script>
+            $(document).ready(function (){
+                showGraph();
+            });
+
+            function showGraph()
+            {
+                {
+                    $.post("bar_encode.php",
+                    function (data)
+                    {
+                        console.log(data);
+                        var id = [];
+                        var jual = [];
+
+                        for (var i in data){
+                        id.push(data[i].tgl_masuk);
+                        jual.push(data[i].harga_total);
+                        }
+                        var chartdata = {
+                            labels : id,
+                            datasets: [
                                 {
-                                    {
-                                        $.post("bar_encode.php",
-                                        function (data)
-                                        {
-                                            console.log(data);
-                                            var xi = [];
-                                            var yi = [];
-
-                                            for (var i in data){
-                                            xi.push(data[i].tgl_masuk);
-                                            yi.push(dataa[i].harga_total);
-                                            }
-                                            var chartdata = {
-                                                
-                                                datasets: [
-                                                    {
-                                                       
-                                                        backgroundColor: '#355bcc',
-                                                        borderColor: '#355bcc',
-                                                        hoverBackgroundColor: '#355bcc',
-                                                        hoverBorderColor: '#355bcc',
-                                                        data: yi
-                                                    }
-                                                ]
-                                            };
-
-                                            var graphTarget = $("#graphCanvas");
-
-                                            var barGraph = new Chart(graphTarget, {
-                                                type: 'line',
-                                                dataa: chartdata
-                                            });
-                                        });
-                                    }
+                                    label: 'Tanggal Transaksi',
+                                    backgroundColor: '#355bcc',
+                                    borderColor: '#355bcc',
+                                    hoverBackgroundColor: '#355bcc',
+                                    hoverBorderColor: '#355bcc',
+                                    data: jual
                                 }
-                                </script>
+                            ]
+                        };
+
+                        var graphTarget = $("#graphCanvas");
+
+                        var barGraph = new Chart(graphTarget, {
+                            type: 'line',
+                            data: chartdata
+                        });
+                    });
+                }
+            }
+        </script>
+                </div>
                             </div>
                         </div>
 
-                        <!-- Pie Chart -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Status Laundry</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                           
-                                            <a class="dropdown-item" href="ttransaksi.php">See More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div id="chart-container">
-                                    <canvas id="graphCanvas"></canvas>
-                                </div>
-                                <script>
-                                $(document).ready(function (){
-                                    showGraph();
-                                });
-
-                                function showGraph()
-                                {
-                                    {
-                                        $.post("grafik.php",
-                                        function (data)
-                                        {
-                                            console.log(data);
-                                            var id = [];
-                                            var jual = [];
-
-                                            for (var i in data){
-                                            id.push(data[i].tgl_masuk);
-                                            jual.push(data[i].harga_total);
-                                            }
-                                            var chartdata = {
-                                                labels : id,
-                                                datasets: [
-                                                    {
-                                                        label: 'Tanggal Transaksi',
-                                                        backgroundColor: '#355bcc',
-                                                        borderColor: '#355bcc',
-                                                        hoverBackgroundColor: '#355bcc',
-                                                        hoverBorderColor: '#355bcc',
-                                                        data: jual
-                                                    }
-                                                ]
-                                            };
-
-                                            var graphTarget = $("#graphCanvas");
-
-                                            var barGraph = new Chart(graphTarget, {
-                                                type: 'line',
-                                                data: chartdata
-                                            });
-                                        });
-                                    }
-                                }
-                                </script>
-                            </div>
-
-                        </div>
+                       
                     </div>
                     
                 

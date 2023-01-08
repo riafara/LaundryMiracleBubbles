@@ -226,6 +226,24 @@ while ($row = mysqli_fetch_array($result)){
                         <div class="p-2">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Edit Transaksi</h1>
+                                <?php
+                           
+                            $auto = mysqli_query($koneksi, "SELECT max(kode_transaksi) as max_code FROM tb_transaksi");
+                            $data = mysqli_fetch_array($auto);
+                            $code = $data['max_code'];
+                            $sqlcust = mysqli_query($koneksi, "SELECT * FROM tb_customer");
+                            $sqlpaket = mysqli_query($koneksi, "SELECT * FROM tb_paket");
+
+                            
+                            
+                            $urutan = (int)substr((string) $code, 1, 3);
+                          
+                            $urutan++;
+                            $huruf = "T";
+                            $kd_transaksi = $huruf.sprintf("%03s", $urutan);
+
+                           
+                            ?>
                             </div>
                             <form class="user" action="edittransaksi.php" method="POST">
                                 <div class="form-group">
@@ -242,25 +260,43 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="col-sm-9 mb-3 mb-sm-0">
                                     <label>Customer</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputNama" name="txt_cust" value="<?php echo $nama; ?>">
-                                </div>
-                                <div class="col-sm-6">
+                                    <select class="form-control" id="exampleInputCust" name="txt_cust"  value="<?php echo $nama; ?>"style="border-radius: 30px; height: 50px">
+                                            <?php while($tb_customer = mysqli_fetch_array($sqlcust,MYSQLI_ASSOC)):;?>
+                                            <option value="<?php echo $nama; ?>" selected hidden><?php echo $nama; ?></option>
+                                            <option value="<?php echo $tb_customer["nama_customer"];?>">
+                                            (<?php echo $tb_customer["kode_customer"];?>)
+                                            <?php echo $tb_customer["nama_customer"];?>
+                                            </option>
+                                            <?php endwhile;?>
+                                        
+                                        </select>                                
+                                    </div>
+                                <div class="col-sm-3">
                                     <label>Kode Customer</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputKc" name="txt_kc" value="<?php echo $cust; ?>">
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label>Paket</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPaket" name="txt_paket" value="<?php echo $paket; ?>">
+                                    <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
+                                        placeholder="Nama Paket" name="txt_paket" value="<?php echo $paket; ?>">
+                                        <?php while($tb_paket = mysqli_fetch_array($sqlpaket,MYSQLI_ASSOC)):;?>
+                                        <option value="<?php echo $paket; ?>" selected hidden><?php echo $paket; ?></option>
+                                        <option value="<?php echo $tb_paket["nama_paket"];?>"> 
+                                        (<?php echo $tb_paket["kode_paket"];?>) <?php echo $tb_paket["nama_paket"];?>
+                                        Rp. <?php echo $tb_paket["harga_paket"];?>/Kg
+                                        </option>
+                                        <?php endwhile;?>
+                                    </select>                              
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label>Harga/Kg</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputHarga" name="txt_harga" value="<?php echo $harga; ?>">
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label>Kode Paket</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputKp" name="txt_kp" value="<?php echo $pkt; ?>">
                                 </div></div>
@@ -275,7 +311,7 @@ while ($row = mysqli_fetch_array($result)){
                                     <label>Status</label>
                                     <select class="form-control " id="exampleInputStatus"
                                          name="txt_s" value="<?php echo $status; ?>" style="border-radius: 30px; height: 50px">
-                                        
+                                         <option value="<?php echo $status; ?>" selected hidden><?php echo $status; ?></option>
                                         <option value="selesai">selesai</option>
                                         <option value="belum">belum</option>
                                     </select>

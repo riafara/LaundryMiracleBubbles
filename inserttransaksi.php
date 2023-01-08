@@ -34,6 +34,7 @@ if( isset($_POST['insert']) ){
 
 $join           = "SELECT * FROM tb_transaksi join tb_customer on tb_customer.kode_customer = tb_transaksi.kode_customer join tb_paket on tb_transaksi.kode_paket = tb_paket.kode_paket";
 $select         = mysqli_query($koneksi, $join);
+
 ?>
 
 <!DOCTYPE html>
@@ -250,21 +251,28 @@ $select         = mysqli_query($koneksi, $join);
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label>Customer</label>
-                                    <select class="form-control" id="exampleInputCust" name="txt_cust"  style="border-radius: 30px; height: 50px">
-                                        <?php while($tb_customer = mysqli_fetch_array($sqlcust,MYSQLI_ASSOC)):;?>
-                                        <option value="" selected hidden>Pilih Customer</option>
-                                        <option value="<?php echo $tb_customer["nama_customer"];?>">
-                                        (<?php echo $tb_customer["kode_customer"];?>)
-                                        <?php echo $tb_customer["nama_customer"];?>
-                                        </option>
-                                        <?php endwhile;?>
-
-                                    </select>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Customer</label>
+                                        <select class="form-control" id="exampleInputCust" name="txt_cust"  style="border-radius: 30px; height: 50px">
+                                            <?php while($tb_customer = mysqli_fetch_array($sqlcust,MYSQLI_ASSOC)):;?>
+                                            <option value="" selected hidden>Pilih Customer</option>
+                                            <option value="<?php echo $tb_customer["nama_customer"];?>">
+                                            (<?php echo $tb_customer["kode_customer"];?>)
+                                            <?php echo $tb_customer["nama_customer"];?>
+                                            </option>
+                                            <?php endwhile;?>
+                                        
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Kode Customer</label>
+                                        <input type="text" class="form-control form-control-user" id="txt_kc"
+                                            placeholder="Contoh : C001" name="txt_kc">
+                                    </div> 
                                 </div>
-                                <div class="col-sm-6">
-                                    <label>Nama Paket</label>
+                                <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label>Paket</label>
                                     <select class="form-control" style="border-radius: 30px; height: 50px" id="exampleInputCust"
                                         placeholder="Nama Paket" name="txt_paket">
                                         <?php while($tb_paket = mysqli_fetch_array($sqlpaket,MYSQLI_ASSOC)):;?>
@@ -276,15 +284,18 @@ $select         = mysqli_query($koneksi, $join);
                                         <?php endwhile;?>
                                     </select>
                                 </div>
+                                <div class="col-sm-3">
+                                    <label>Harga/Kg</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputHarga" placeholder="Contoh : 2500" name="txt_harga" >
                                 </div>
-
-
-                                
-                               
+                                <div class="col-sm-3">
+                                    <label>Kode Paket</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputKp" placeholder="Contoh : P001" name="txt_kp">
+                                </div></div>
                                 <div class="form-group">
                                     <label>Berat</label>
                                     <input type="number" class="form-control form-control-user" id="exampleInputQty"
-                                        placeholder="" name="txt_qty">
+                                        placeholder="Contoh : 1" name="txt_qty">
                                 </div>
                                 
                                 
@@ -370,6 +381,13 @@ $select         = mysqli_query($koneksi, $join);
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+    <script type="text/javascript">
+    <?php echo $jsArray; ?>
+    function changeValue(txt_cust) {
+      document.getElementById("txt_kc").value = hrg_brg[txt_cust].txt_kc;
+    };
+    </script> <!-- Tampilkan Harga berdasarkan kode barang -->
 </body>
 
 </html>
