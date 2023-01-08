@@ -209,7 +209,7 @@ while ($row = mysqli_fetch_array($result)){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit User</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Edit Customer</h1>
                             </div>
                             <form class="user" action="customeredit.php" method="POST">
                                 <div class="form-group">
